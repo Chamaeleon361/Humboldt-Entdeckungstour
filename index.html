@@ -5,13 +5,20 @@
     <title>Humboldt Entdeckungstour</title>
     //<meta name="description" content="360&deg; Image - A-Frame">
     <script src="assets/js/aframe-master.js"></script>
-    <script src="assets/js/bildwechsel.js"></script>
+    <script src="assets/js/raumwechsel.js"></script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      
+      <a-sky scr="assets/bilder/keller_3treppe.jpg" rotation="0 -95 0"></a-sky>
 
+      <a-entity id = pfeil
+      geometry="primitive: triangle;
+                vertexA: 0 -0.1 0;"
+      material="color:white;"
+      position="0.03 0 -4.5"
+      onclick="raumwechsel('zielraum')">  
+    </a-entity>
     </a-scene>
   </body>
 </html>
