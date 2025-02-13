@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Humboldt Entdeckungstour</title>
-    //<meta name="description" content="360&deg; Image - A-Frame">
+    <meta name="description" content="360&deg; Image - A-Frame">
     <script src="assets/js/aframe-master.js"></script>
-    <script src="assets/js/bildwechsel.js"></script>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="assets/js/raumwechsel.js" defer></script>
+   <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
   </head>
   <body>
     <a-scene>
+      <a-sky src="assets/bilder/haupteingang.jpg"></a-sky>
+      <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse">
+      </a-camera>
       
-
     </a-scene>
   </body>
 </html>
+
+
