@@ -6,12 +6,28 @@
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="assets/js/aframe-master.js"></script>
     <script src="assets/js/raumwechsel.js" defer></script>
-   <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
   </head>
   <body>
+   
     <a-scene>
       <a-sky src="assets/bilder/haupteingang.jpg"></a-sky>
-      <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse">
+      <a-camera id='a-camera' position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
+        <a-image 
+        
+        id="Grundriss" src="assets/bilder/grundriss1.png" 
+        position="-2 1.2 -1.9" width="1.2" height="0.5" opacity="0.8"> 
+
+
+ 
+</a-image>
+
+<!-- unten rechts grundriss 2 -1.2 -1.9 -->
+<!-- <a-entity position="0.8 0.5 -1" scale="0.5 0.5 0.5">          
+  <a-plane width="1.5" height="0.6" color="black" opacity="0.7" position="0 0 0"></a-plane>
+  <a-text id="info" value="Hier stehen Informationen..." width="1.4" position="-0.7 0.1 0.01" color="white"></a-text> 
+  <a-image src="assets/bilder/grundriss1.png" width="1" height="0.3" position="0 0 0"></a-image>
+</a-entity> -->
+
       </a-camera>
       
     </a-scene>
