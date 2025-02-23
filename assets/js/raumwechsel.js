@@ -10,6 +10,8 @@
     }
 });
 
+
+
   
   
   //Raumdatenbank
@@ -19,19 +21,19 @@
     haupteingang: {
       bild: 'assets/bilder/haupteingang.jpg',
       rotation: "0 -97 0",
-      etage: '1',
+      etage: 'draussen',
       pfeile:[
         {ziel:'treppe01', position: '0.2 0 -4.5', rotation:'0 0 0'},
-        {ziel: 'neubau', position: '5 0 0', rotation: '0 0 0'}
+        {ziel: 'n11', position: '5 0 0', rotation: '0 0 0'}
       ]
     },
     haupteingang_2: {
       bild: 'assets/bilder/haupteingang.jpg',
       rotation: "0 83 0",
-      etage: '1',
+      etage: 'draussen',
       pfeile:[
         {ziel:'treppe01', position: '-0.2 0 4.5', rotation:'0 180 0'},
-        {ziel: 'neubau', position: '-5 0 0', rotation: '0 180 0'}
+        {ziel: 'n11', position: '-5 0 0', rotation: '0 180 0'}
       ]
     },
 
@@ -949,77 +951,315 @@
       ]
     },
 
+    //neubau
 
+    n11: {
+      bild: 'assets/bilder/neubau/fluru1.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'r12', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r13', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r14', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'haupteingang', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+    n11_2: {
+      bild: 'assets/bilder/neubau/fluru1.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'r12', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r13', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r14', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'haupteingang', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    n12: {
+      bild: 'assets/bilder/neubau/fluru2.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+    n12_2: {
+      bild: 'assets/bilder/neubau/fluru2.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    n21: {
+      bild: 'assets/bilder/neubau/fluro1.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n12', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'n22', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r21', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r22', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r23', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+    n21_2: {
+      bild: 'assets/bilder/neubau/fluro1.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n12', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'n22', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r21', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r22', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r23', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+    
+    n22: {
+      bild: 'assets/bilder/neubau/fluro2.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r25', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r24', position: '0 -1 0', rotation: '0 0 0'} 
+      ]
+    },
+    n22_2: {
+      bild: 'assets/bilder/neubau/fluro2.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r25', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r24', position: '0 -1 0', rotation: '0 0 0'} 
+      ]
+    },
 
+    r12: {
+      bild: 'assets/bilder/neubau/1.2.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n12', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    r13: {
+      bild: 'assets/bilder/neubau/1.3.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n12', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    r14: {
+      bild: 'assets/bilder/neubau/1.4.jpg',
+      etage: 'neubau1',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n11', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    r21_1: {
+      bild: 'assets/bilder/neubau/2.1.1.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'r21_2', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'n21_2', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r22', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+    r21_2: {
+      bild: 'assets/bilder/neubau/2.1.2.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'r21_1', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
+    r22: {
+      bild: 'assets/bilder/neubau/2.2.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'r21_1', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r23', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'n21_2', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
 
-  
-  
+    r23: {
+      bild: 'assets/bilder/neubau/2.3.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n21_2', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'r22', position: '0 -1 0', rotation: '0 0 0'},
+        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+
+    r24: {
+      bild: 'assets/bilder/neubau/2.4.jpg',      
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n22', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
+
+    r25: {
+      bild: 'assets/bilder/neubau/2.5.jpg',
+      etage: 'neubau2',
+      rotation: "0 0 0",
+      pfeile: [
+        { ziel: 'n22', position: '0 -1 0', rotation: '0 0 0'}
+      ]
+    },
   
   };
+
+//Etagen zu den entsprechenden Grundrissbildern
+    const Grundriss = {
+      'draussen': 'assets/bilder/grundrissdraussen.jpeg',
+      '0': 'assets/bilder/grundriss0.png',
+      '1': 'assets/bilder/grundriss1.png',
+      '2': 'assets/bilder/grundriss2.png',
+      '3': 'assets/bilder/grundriss3.png',
+      'neubau1': 'assets/bilder/grundrissn1.png',
+      'neubau2': 'assets/bilder/grundrissn2.png'
+    };
+
+    // Öffnet den Grundriss
+function oeffneGrundriss() {
+  const container = document.getElementById("grundriss-container");
+  container.setAttribute("visible", true);
+}
+
+// Schließt den Grundriss
+function schliesseGrundriss() {
+  const container = document.getElementById("grundriss-container");
+  container.setAttribute("visible", false);
+}
+
+// Wechselt den Grundriss zur gewählten Etage
+function wechsleEtage(etage) {
+  console.log("wechsleEtage aufgerufen mit Etage:", etage);
+  const grundrissBild = document.getElementById("grundriss-bild");
+  
+  if (!grundrissBild) {
+    console.error("Grundriss-Bild nicht gefunden!");
+    return;}
+
+  grundrissBild.setAttribute("src", Grundriss[etage]);
+
+  // Neue klickbare Flächen für die gewählte Etage laden
+  ladeKlickbareZonen(etage);
+}
+
+//alle raume zuordnen
+const raumHotspots = {
+  etage1: [
+    { raum: "klassenzimmer1", position: "0.2 0 0.3", size: "0.2 0.2" },
+    { raum: "sekretariat", position: "-0.5 0 0.4", size: "0.2 0.2" }
+  ],
+  etage2: [
+    { raum: "chemieraum", position: "0.4 0 -0.2", size: "0.2 0.2" },
+    { raum: "bibliothek", position: "-0.3 0 0.1", size: "0.3 0.2" }
+  ],
+  etage3: [
+    { raum: "musikraum", position: "0.1 0 0.5", size: "0.2 0.2" }
+  ],
+  keller: [
+    { raum: "werkraum", position: "-0.4 0 -0.3", size: "0.2 0.2" }
+  ],
+  neubau1: [
+    { raum: "kunstraum", position: "0.5 0 0", size: "0.3 0.3" }
+  ],
+  neubau2: [
+    { raum: "it-raum", position: "-0.2 0 0.2", size: "0.2 0.2" }
+  ]
+};
+
+
+function ladeKlickbareZonen(etage) {
+  // Container für Hotspots holen oder erstellen
+  let hotspotContainer = document.getElementById("hotspot-container");
+  if (!hotspotContainer) {
+    hotspotContainer = document.createElement("a-entity");
+    hotspotContainer.setAttribute("id", "hotspot-container");
+    document.getElementById("grundriss-container").appendChild(hotspotContainer);
+  }
+
+  // Vorherige Hotspots entfernen
+  while (hotspotContainer.firstChild) {
+    hotspotContainer.removeChild(hotspotContainer.firstChild);
+  }
+
+  // Hotspots der gewählten Etage laden
+  const hotspots = raumHotspots[etage] || [];
+  hotspots.forEach((spot) => {
+    const hotspot = document.createElement("a-plane");
+
+    hotspot.setAttribute("position", spot.position);
+    hotspot.setAttribute("width", spot.size.split(" ")[0]);
+    hotspot.setAttribute("height", spot.size.split(" ")[1]);
+    hotspot.setAttribute("material", "opacity: 0.2; color: yellow; transparent: true;");
+    hotspot.setAttribute("class", "clickable");
+
+    // Bei Klick wird der Raum geladen
+    hotspot.addEventListener("click", () => {
+      //console.log(`Wechsle zu Raum: ${spot.raum}`);
+      ladeRaum(spot.raum);  // Wechsel zum Raum
+      schliesseGrundriss(); // Grundriss schließen
+    });
+
+    hotspotContainer.appendChild(hotspot);
+  });
+}
 
 
   function ladeGrundriss(etage) {
     const GrundrissImage = document.getElementById('Grundriss');
     console.log("Update floor plan for etage:", etage);
     
-    //Etagen zu den entsprechenden Grundrissbildern
-    const Grundriss = {
-      '0': 'assets/bilder/grundriss0.png',
-      '1': 'assets/bilder/grundriss1.png',
-      '2': 'assets/bilder/grundriss2.png',
-      '3': 'assets/bilder/grundriss3.png',
-      '.1': 'assets/bilder/grundrissn1.png',
-      '.2': 'assets/bilder/grundrissn2.png'
-    };
-
     if (Grundriss[etage]) {
-      console.log("Changing floor plan to:", Grundriss[etage]);
+      console.log("Wechsel zu Etage:", Grundriss[etage]);
       GrundrissImage.setAttribute('src', Grundriss[etage]);
     } else {
       console.error("Kein Grundriss für Etage", etage, "gefunden!");
     }
   }
   
-  
-
 
   function ladeRaum(raum) {
     
     //vorherige Pfeile entfernt 
     document.querySelectorAll('.pfeil').forEach((el) => el.remove());
-    
-    // Setze die Rotation zuerst
-    const sky = document.querySelector('a-sky');
-    sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
-
-     const camera = document.querySelector('a-camera');
-     console.log("Kamera:", camera);   
    
-     console.log(`Lade Raum: ${raum}, Setze Rotation: ${raeume[raum].rotation}`);
-     camera.setAttribute('rotation', raeume[raum].rotation);
+    const sky = document.querySelector('a-sky');
 
-     console.log("Kamera:", camera);   
-
+    //const camera = document.querySelector('#a-camera');
+    sky.setAttribute('rotation', raeume[raum].rotation);
 
     // Warte kurz, bevor das Bild geladen wird (damit Rotation zuerst greift) -> set timeout
-    
     sky.setAttribute('src', raeume[raum].bild);
     console.log("Bild geladen:", raeume[raum].bild);
-
 
 
     // Aktualisiere den Grundriss
     if (raeume[raum].etage) {
       ladeGrundriss(raeume[raum].etage);
     }
-    
-    
+        
       
     // Neue Pfeile hinzufügen
     raeume[raum].pfeile.forEach((pfeil) => {
@@ -1036,6 +1276,7 @@
 
       //Interaktive Pfeile
       pfeilEl.setAttribute("cursor-listener", ""); 
+      //pfeilEl.setAttribute("data-raycastable", "");
 
 
       // Elemente zur Szene hinzufügen
