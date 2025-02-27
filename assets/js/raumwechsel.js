@@ -299,418 +299,412 @@
     },
   
   //1.Etage
-
     treppeE1: {
       bild: 'assets/bilder/1etage/treppeE1.jpg',
-      rotation: "0 0 0",
-      etage: '1',
+      rotation: "0 212 0",
       pfeile: [
-        { ziel: 'treppe01', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppe12', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'E11', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'E13', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'treppe01', position: '2.3 -1 -3.5', rotation: '0 -2 0'},
+        { ziel: 'treppe12', position: '-2.7 -1 -3.7', rotation: '0 -2 0'},
+        { ziel: 'E11_2', position: '-6 -1 -0.65', rotation: '0 88 0'},
+        { ziel: 'E13', position: '6 -1 -0.5', rotation: '0  -88 0'}
       ]
     },
 
-    E11: {
-      bild: 'assets/bilder/1etage/E11.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
-      pfeile: [
-        { ziel: 'treppeE1', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r105', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r106', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r108', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r109', position: '-2 1 -4', rotation: '0 90 0'}
-      ]
-    },
     E11_2: {
       bild: 'assets/bilder/1etage/E11.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 58 0",
       pfeile: [
-        { ziel: 'treppeE1', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r105', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r106', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r108', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r109', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'treppeE1', position: '0 -1 3.2', rotation: '0 180 0'},
+        { ziel: 'r108', position: '1.2 -1 5.6', rotation: '0 153 0'},
+        { ziel: 'r106', position: '-5 -1 -0.6', rotation: '0 90 0'},
+        { ziel: 'r105', position: '-1.3 -1 6.8', rotation: '0 207 0'},
+        { ziel: 'r109', position: '1.2 -1 11.5', rotation: '0 155 0'}
+      ]
+    },
+    E11: {
+      bild: 'assets/bilder/1etage/E11.jpg',
+      rotation: "0 -120 0",
+      pfeile: [
+        { ziel: 'treppeE1', position: '0 -1 -3.2', rotation: '0 0 0'},
+        { ziel: 'r108', position: '-1.3 -1 -5.2', rotation: '0 -27 0'},
+        { ziel: 'r106', position: '5 -1 0.3', rotation: '0 -90 0'},
+        { ziel: 'r105', position: '1 -1 -6.8', rotation: '0 27 0'},
+        { ziel: 'r109', position: '-1.5 -1 -11.5', rotation: '0 -25 0'}
       ]
     },
 
     r105: {
       bild: 'assets/bilder/1etage/105.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 160 0",
       pfeile: [
-        { ziel: 'E1', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E11', position: '3.3 -1 -5', rotation: '0 21 0'} 
       ]
     },
 
     r106: {
       bild: 'assets/bilder/1etage/106.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -120 0",
       pfeile: [
-        { ziel: 'E1', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E11', position: '0 -1 5.7', rotation: '0 152 0'} 
       ]
     },
 
     r108: {
-      bild: 'assets/bilder/1etage/108.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      bild: 'assets/bilder/1etage/108h.jpg',
+      rotation: "0 192 0",
       pfeile: [
-        { ziel: 'E1', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E11_2', position: '0 -1 6', rotation: '0 205 0'} 
       ]
     },
 
     r109: {
       bild: 'assets/bilder/1etage/109.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 22 0",
       pfeile: [
-        { ziel: 'E1', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E11_2', position: '-1 -1 3', rotation: '0 180 0'} 
       ]
     },
 
-    E13: {
-      bild: 'assets/bilder/1etage/E13.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
-      pfeile: [
-        { ziel: 'treppeE1', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r104', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r105', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'rE14', position: '-2 1 -4', rotation: '0 90 0'}
-      ]
-    },
     E13_2: {
       bild: 'assets/bilder/1etage/E13.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -35 0",
       pfeile: [
-        { ziel: 'treppeE1', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r104', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r105', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'rE14', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'treppeE1', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'},
+        { ziel: 'r104', position: '-1 -1 -2.7', rotation: '0 -35 0'},
+        { ziel: 'r103', position: '-1.6 -1 5.3', rotation: '0 202 0'}
+      ]
+    },
+    E13: {
+      bild: 'assets/bilder/1etage/E13.jpg',
+      rotation: "0 147 0",
+      pfeile: [
+        { ziel: 'treppeE1', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
+        { ziel: 'r104', position: '1 -1 2.7', rotation: '0 145 0'},
+        { ziel: 'r103', position: '1.6 -1 -5.3', rotation: '0 22 0'}
       ]
     },
 
     r104: {
       bild: 'assets/bilder/1etage/104.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -71 0",
       pfeile: [
-        { ziel: 'E13', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E13', position: '3 -1 7.5', rotation: '0 160 0'} 
       ]
     },
 
     r103: {
       bild: 'assets/bilder/1etage/103.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -9 0",
       pfeile: [
-        { ziel: 'E13', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E13', position: '4.3 -1 -3.3', rotation: '0 20 0'} 
       ]
     },
 
     E14: {
       bild: 'assets/bilder/1etage/E14.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -20 0",
       pfeile: [
-        { ziel: 'E13_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E15', position: '-2 1 -4', rotation: '0 90 0'},
+        { ziel: 'E15', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'},
+        { ziel: 'E13_2', position: '-0.2 -1 3.8', rotation: '0 177.4 0'}
       ]
     },
     E14_2: {
       bild: 'assets/bilder/1etage/E14.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 160 0",
       pfeile: [
-        { ziel: 'E13', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E15', position: '-2 1 -4', rotation: '0 90 0'},
+        { ziel: 'E13_2', position: '0.2 -1 -3.8', rotation: '0 -3.6 0'},
+        { ziel: 'E15', position: '-0.2 -1 3.8', rotation: '0 178 0'}
       ]
     },
 
     E15: {
       bild: 'assets/bilder/1etage/E15.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -90 0",
       pfeile: [
-        { ziel: 'E14_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r102', position: '-2 1 -4', rotation: '0 90 0'}, 
-        { ziel: 'E16', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E14_2', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
+        { ziel: 'r102', position: '2 -1 3.8', rotation: '0 -93 0'}, 
+        { ziel: 'E16', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'}
       ]
     },
     E15_2: {
       bild: 'assets/bilder/1etage/E15.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 90 0",
       pfeile: [
-        { ziel: 'E14_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r102', position: '-2 1 -4', rotation: '0 90 0'}, 
-        { ziel: 'E16', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E16', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
+        { ziel: 'r102', position: '-1 -1 -4.3', rotation: '0 -27 0'}, 
+        { ziel: 'E14_2', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'}
       ]
     },
 
     r102: {
       bild: 'assets/bilder/1etage/102.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 97 0",
       pfeile: [
-        { ziel: 'E15', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E15', position: '3.2 -1 -3.3', rotation: '0 20 0'} 
       ]
     },
 
     E16: {
       bild: 'assets/bilder/1etage/E16.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 140 0",
       pfeile: [
-        { ziel: 'E15', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppchenE1', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r101', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r117', position: '-2 1 -4', rotation: '0 90 0'},
+        { ziel: 'E15_2', position: '-0.2 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'treppchenE1', position: '-2 -1 3.8', rotation: '0 204 0'},
+        { ziel: 'r101', position: '1.2 -1 3', rotation: '0 -204 0'},
+        { ziel: 'r117', position: '-1.6 -1 -2.2', rotation: '0 -23 0'}
+      ]
+    },
+    E16_2: {
+      bild: 'assets/bilder/1etage/E16.jpg',
+      rotation: "0 -40 0",
+      pfeile: [
+        { ziel: 'E15_2', position: '0.2 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'treppchenE1', position: '2 -1 -3.8', rotation: '0 24 0'},
+        { ziel: 'r101', position: '-1.2 -1 -3', rotation: '0 -24 0'},
+        { ziel: 'r117', position: '1.6 -1 2.2', rotation: '0 157 0'}
+      ]
+    },
+
+    r101: {
+      bild: 'assets/bilder/1etage/101.jpg',
+      rotation: "0 60 0",
+      pfeile: [
+        { ziel: 'E16', position: '4 -1 -6.7', rotation: '0 20 0'} 
+      ]
+    },
+
+    r117: {
+      bild: 'assets/bilder/1etage/117.jpg',
+      rotation: "0 88 0",
+      pfeile: [
+        { ziel: 'E16_2', position: '3.5 -1 -7', rotation: '0 0 0'} 
       ]
     },
 
     treppchenE1: {
       bild: 'assets/bilder/1etage/treppchenE1.jpg',
-      rotation: "0 -138 0",
-      etage: '1',
+      rotation: "0 -60 0",
       pfeile: [
-        { ziel: 'E16', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppchenE2', position: '-2 1 -4', rotation: '0 90 0'}, 
-        { ziel: 'K7', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E16_2', position: '1.2 -1 2', rotation: '0 180 0'},
+        { ziel: 'treppchenE2', position: '-1.5 -1 -1.3', rotation: '0 0 0'}, 
+        { ziel: 'K7', position: '1.5 -1 -1.3', rotation: '0 0 0'}
       ]
     },
   
-    //2. Etage
+  //2. Etage
 
     treppe12: {
       bild: 'assets/bilder/treppe12.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -148 0",
       pfeile: [
-        { ziel: 'treppe01', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppeE2', position: '-2 1 -4', rotation: '0 90 0'}        
+        { ziel: 'treppeE1', position: '2.5 -1 -3', rotation: '0 2 0'},
+        { ziel: 'treppeE2', position: '-2.9 -1 -3', rotation: '0 0 0'}        
       ]
     },
 
     treppeE2: {
       bild: 'assets/bilder/2etage/treppeE2.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 132 0",
       pfeile: [
-        { ziel: 'treppe23', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppe12', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'E22', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r210h', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r208', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r207', position: '-2 1 -4', rotation: '0 90 0'}        
+        { ziel: 'treppe23', position: '-2.7 -1 -2.8', rotation: '0 0 0'},
+        { ziel: 'treppe12', position: '2.5 -1 -2.9', rotation: '0 0 0'},
+        { ziel: 'E22', position: '6 -1 -0.1', rotation: '0 -90 0'},
+        { ziel: 'r210h', position: '0 0 0', rotation: '0 90 0'},
+        { ziel: 'r208', position: '0 0 0', rotation: '0 90 0'},
+        { ziel: 'r207', position: '0 0 0', rotation: '0 90 0'}        
       ]
     },
     
     r207: {
       bild: 'assets/bilder/2etage/207.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 65 0",
       pfeile: [
-        { ziel: 'treppeE2', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'treppeE2', position: '4 -1 -5.5', rotation: '0 17 0'} 
       ]
     },
 
     r208: {
       bild: 'assets/bilder/2etage/208.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -120 0",
       pfeile: [
-        { ziel: 'treppeE2', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'treppeE2', position: '0 -1 7.5', rotation: '0 152 0'} 
       ]
     },
 
     r210h: {
       bild: 'assets/bilder/2etage/210h.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 74 0",
       pfeile: [
-        { ziel: 'treppeE2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'r210', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'treppeE2', position: '0 -1 5', rotation: '0 -157.5 0'},
+        { ziel: 'r210', position: '0 -1 -3.8', rotation: '0 0 0'} 
       ]
     },
 
     r210: {
       bild: 'assets/bilder/2etage/210.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 38 0",
       pfeile: [
-        { ziel: 'r210h', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'r210h', position: '0 -1 3.8', rotation: '0 178 0'} 
       ]
     },
 
     E22: {
       bild: 'assets/bilder/2etage/E22.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 49 0",
       pfeile: [
-        { ziel: 'E23', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppeE2', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r204', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r212', position: '-2 1 -4', rotation: '0 90 0'},
+        { ziel: 'E23', position: '0.2 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'treppeE2', position: '0.3 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'r204', position: '2.5 -1 1', rotation: '0 -90 0'},
+        { ziel: 'r212', position: '-1 -1 3.5', rotation: '0 -155 0'},
         { ziel: 'r213', position: '-2 1 -4', rotation: '0 90 0'}
       ]
     },
 
     E22_2: {
       bild: 'assets/bilder/2etage/E22.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -131 0",
       pfeile: [
-        { ziel: 'E23', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppeE2', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r204', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r212', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r213', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E23', position: '-0.2 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'treppeE2', position: '-0.3 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'r204', position: '-2.5 -1 -1', rotation: '0 90 0'},
+        { ziel: 'r212', position: '1 -1 -3.5', rotation: '0 25 0'},
+        { ziel: 'r213', position: '2 1 4', rotation: '0 -90 0'}
       ]
     },
 
     r204: {
       bild: 'assets/bilder/2etage/204.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -36 0",
       pfeile: [
-        { ziel: 'E22', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E22', position: '-0.2 -1 1.5', rotation: '0 180 0'} 
       ]
     },
 
     r212: {
       bild: 'assets/bilder/2etage/212.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -35 0",
       pfeile: [
-        { ziel: 'E22', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E22', position: '-0.6 -1 1.6', rotation: '0 162 0'} 
       ]
     },
 
     r213: {
       bild: 'assets/bilder/2etage/213.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -118 0",
       pfeile: [
-        { ziel: 'E22', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E22', position: '0 -1 2.3', rotation: '0 180 0'} 
       ]
     },
 
     E23: {
       bild: 'assets/bilder/2etage/E23.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 10 0",
       pfeile: [
-        { ziel: 'E24', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E22_2', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r203', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E24', position: '0.3 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'E22_2', position: '-0.2 -1 3.8', rotation: '0 175 0'},
+        { ziel: 'r203', position: '2 -1 -4.5', rotation: '0 23 0'}
       ]
     },
-
-    r203: {
-      bild: 'assets/bilder/2etage/203.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
-      pfeile: [
-        { ziel: 'E23', position: '0 1 -4', rotation: '0 180 0'} 
-      ]
-    },
-
     E23_2: {
       bild: 'assets/bilder/2etage/E23.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -165 0",
       pfeile: [
-        { ziel: 'E24', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E22_2', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r203', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E24', position: '0.1 -1 3.8', rotation: '0 183 0'},
+        { ziel: 'E22_2', position: '-0.2 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'r203', position: '-1.5 -1 4.5', rotation: '0 -155 0'}
+      ]
+    },
+
+    r203: {//bild nicht da
+      bild: 'assets/bilder/2etage/203.jpg',
+      rotation: "0 172 0",
+      pfeile: [
+        { ziel: 'E23', position: '5.5 -1 1.8', rotation: '0 -90 0'} 
       ]
     },
 
     E24: {
       bild: 'assets/bilder/2etage/E24.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 80 0",
       pfeile: [
-        { ziel: 'E23_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E25', position: '-2 1 -4', rotation: '0 90 0'},
+        { ziel: 'E23_2', position: '-0.2 -1 3.8', rotation: '0 182 0'},
+        { ziel: 'E25', position: '-0.3 -1 -3.8', rotation: '0 2 0'},
         { ziel: 'r202', position: '-2 1 -4', rotation: '0 90 0'}
       ]
     },
 
     E24_2: {
       bild: 'assets/bilder/2etage/E24.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -103 0",
       pfeile: [
-        { ziel: 'E23_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'E25', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r202', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E23_2', position: '0.2 -1 -3.8', rotation: '0 -2 0'},
+        { ziel: 'E25', position: '0.3 -1 3.8', rotation: '0 -178 0'},
+        { ziel: 'r202', position: '-1 -1 3.3', rotation: '0 -155 0'}
       ]
     },
 
     r202: {
       bild: 'assets/bilder/2etage/202.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 173 0",
       pfeile: [
-        { ziel: 'E24', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E24', position: '5.7 -1 1.8', rotation: '0 -89 0'} 
       ]
     },
 
     E25: {
       bild: 'assets/bilder/2etage/E25.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 87 0",
       pfeile: [
-        { ziel: 'E24_2', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppchenE2', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r201', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r220', position: '-2 1 -4', rotation: '0 90 0'},
-        { ziel: 'r221', position: '-2 1 -4', rotation: '0 90 0'}
+        { ziel: 'E24_2', position: '0.2 -1 3.3', rotation: '0 180 0'},
+        { ziel: 'treppchenE2', position: '-3.1 -1 0.4', rotation: '0 90 0'},
+        { ziel: 'r201', position: '2.5 -1 0', rotation: '0 -90 0'},
+        { ziel: 'r220', position: '-2.4 -1 -3.3', rotation: '0 88.5 0'},
+        { ziel: 'r221', position: '0 -1 -5', rotation: '0 0 0'}
+      ]
+    },
+    E25_2: {
+      bild: 'assets/bilder/2etage/E25.jpg',
+      rotation: "0 -91.55 0",
+      pfeile: [
+        { ziel: 'E24_2', position: '-0.2 -1 -3.3', rotation: '0 0 0'},
+        { ziel: 'treppchenE2', position: '3.1 -1 -0.4', rotation: '0 -90 0'},
+        { ziel: 'r201', position: '-2.5 -1 0', rotation: '0 90 0'},
+        { ziel: 'r220', position: '2.4 -1 3.3', rotation: '0 -91.5 0'},
+        { ziel: 'r221', position: '0 -1 5', rotation: '0 180 0'}
       ]
     },
 
     r201: {
       bild: 'assets/bilder/2etage/201.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -128 0",
       pfeile: [
-        { ziel: 'E25', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E25', position: '3 -1 -4.7', rotation: '0 24 0'} 
       ]
     },
 
     r220: {
       bild: 'assets/bilder/2etage/220.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -15 0",
       pfeile: [
-        { ziel: 'E25', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E25_2', position: '5.5 -1 0', rotation: '0 -120 0'} 
       ]
     },
 
     r221: {
       bild: 'assets/bilder/2etage/221.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      rotation: "0 -162 0",
       pfeile: [
-        { ziel: 'E25', position: '0 1 -4', rotation: '0 180 0'} 
+        { ziel: 'E25', position: '-0.2 -1 3.7', rotation: '0 180 0'} 
       ]
     },
 
     treppchenE2: {
-      bild: 'assets/bilder/treppchenE2.jpg',
-      rotation: "0 -138 0",
-      etage: '2',
+      bild: 'assets/bilder/2etage/treppchenE2.jpg',
+      rotation: "0 18 0",
       pfeile: [
-        { ziel: 'treppchenE1', position: '0 1 -4', rotation: '0 180 0'},
-        { ziel: 'treppchenE3', position: '-2 1 -4', rotation: '0 90 0'}        
+        { ziel: 'treppchenE1', position: '1.7 -1 -1.4', rotation: '0 0 0'},
+        { ziel: 'treppchenE3', position: '-1.6 -1 -0.8', rotation: '0 0 0'}, 
+        { ziel: 'E25_2', position: '1.7 -1 1.9', rotation: '0 180 0'}       
       ]
     },
 
@@ -1134,8 +1128,8 @@
       '1': 'assets/bilder/grundriss1.png',
       '2': 'assets/bilder/grundriss2.png',
       '3': 'assets/bilder/grundriss3.png',
-      'neubau1': 'assets/bilder/grundrissn1.png',
-      'neubau2': 'assets/bilder/grundrissn2.png'
+      'neubau1': 'assets/bilder/grundrissneubau1.png',
+      'neubau2': 'assets/bilder/grundrissneubau2.png'
     };
 
     // Öffnet den Grundriss
@@ -1167,25 +1161,77 @@ function wechsleEtage(etage) {
 
 //alle raume zuordnen
 const raumHotspots = {
-  etage1: [
-    { raum: "klassenzimmer1", position: "0.2 0 0.3", size: "0.2 0.2" },
-    { raum: "sekretariat", position: "-0.5 0 0.4", size: "0.2 0.2" }
+  draussen: [
+    { raum: "haupteingang", position: "-0.4 -0.9 0.05", size: "0.5 0.14" },
+    { raum: "treppe01", position: "-0.4 -0.66 0.05", size: "0.9 0.27" },
+    { raum: "n11", position: "-0.1 -1.1 0.05", size: "0.35 0.25" }
   ],
-  etage2: [
-    { raum: "chemieraum", position: "0.4 0 -0.2", size: "0.2 0.2" },
-    { raum: "bibliothek", position: "-0.3 0 0.1", size: "0.3 0.2" }
+  1: [//1
+    { raum: "r101", position: "-0.83 -0.7 0.05", size: "0.23 0.29" },
+    { raum: "r102", position: "-0.6 -0.7 0.05", size: "0.23 0.29"  },
+    { raum: "r103", position: "-0.35 -0.7 0.05", size: "0.25 0.29"  },
+    { raum: "r104", position: "-0.05 -0.7 0.05", size: "0.27 0.29"  },
+    { raum: "r105", position: "0.49 -0.7 0.05", size: "0.29 0.29"  },
+    { raum: "r106", position: "0.8 -0.7 0.05", size: "0.26 0.29" },
+    { raum: "r108", position: "0.78 -1.32 0.05", size: "0.34 0.3" },
+    { raum: "r109", position: "0.45 -1.32 0.05", size: "0.26 0.3" },
+    { raum: "r117", position: "-0.85 -1.32 0.05", size: "0.23 0.3" },
+    { raum: "treppeE1", position: "0.2 -1.27 0.05", size: "0.25 0.4" },
+    { raum: "treppchenE1", position: "-0.65 -1.32 0.05", size: "0.12 0.3" }
   ],
-  etage3: [
-    { raum: "musikraum", position: "0.1 0 0.5", size: "0.2 0.2" }
+  2: [
+    { raum: "r201", position: "-0.83 -0.7 0.05", size: "0.26 0.29" },
+    { raum: "r202", position: "-0.52 -0.7 0.05", size: "0.26 0.29" },
+    { raum: "r203", position: "-0.25 -0.7 0.05", size: "0.26 0.29" },
+    { raum: "r204", position: "0.12 -0.7 0.05", size: "0.4 0.29" },
+    { raum: "r207", position: "0.5 -0.7 0.05", size: "0.3 0.29" },
+    { raum: "r208", position: "0.8 -0.7 0.05", size: "0.27 0.29" },
+    { raum: "r210", position: "0.79 -1.32 0.05", size: "0.34 0.3" },
+    { raum: "r212", position: "-0.05 -1.32 0.05", size: "0.23 0.3" },
+    { raum: "r220", position: "-0.83 -1.32 0.05", size: "0.25 0.3" },
+    { raum: "r221", position: "-0.88 -1 0.05", size: "0.15 0.29" },
+    { raum: "treppeE2", position: "0.2 -1.29 0.05", size: "0.25 0.4" },
+    { raum: "treppchenE2", position: "-0.65 -1.32 0.05", size: "0.12 0.3" }
   ],
-  keller: [
-    { raum: "werkraum", position: "-0.4 0 -0.3", size: "0.2 0.2" }
+  3: [
+    { raum: "r301", position: "-0.84 -0.7 0.05", size: "0.22 0.29" },
+    { raum: "r302", position: "-0.61 -0.7 0.05", size: "0.23 0.29" },
+    { raum: "r303", position: "-0.35 -0.7 0.05", size: "0.27 0.29" },
+    { raum: "r304", position: "-0.05 -0.7 0.05", size: "0.26 0.29" },
+    { raum: "r306", position: "0.5 -0.7 0.05", size: "0.3 0.29" },
+    { raum: "r308", position: "0.5 -1.32 0.05", size: "0.29 0.3" },
+    { raum: "r309", position: "-0.05 -1.32 0.05", size: "0.27 0.3" },
+    { raum: "r310", position: "-0.3 -1.32 0.05", size: "0.21 0.3" },
+    { raum: "r315", position: "-0.84 -1.32 0.05", size: "0.23 0.29" },
+    { raum: "Aula_1", position: "0.82 -1 0.05", size: "0.28 0.9" },
+    { raum: "treppeE3", position: "0.2 -1.29 0.05", size: "0.24 0.4" },
+    { raum: "treppchenE3", position: "-0.66 -1.32 0.05", size: "0.12 0.3" }
+  ],
+  0: [
+    { raum: "r001", position: "-0.8 -0.7 0.05", size: "0.26 0.27" },
+    { raum: "r004", position: "-0.25 -0.7 0.05", size: "0.27 0.27" },
+    { raum: "r005", position: "0.05 -0.7 0.05", size: "0.27 0.27" },
+    { raum: "r007", position: "0.5 -0.7 0.05", size: "0.27 0.27" },
+    { raum: "r008", position: "0.8 -0.7 0.05", size: "0.27 0.27" },
+    { raum: "r009", position: "0.85 -1 0.05", size: "0.2 0.27" },
+    { raum: "r010", position: "0.8 -1.3 0.05", size: "0.35 0.3" },
+    { raum: "r011", position: "0.45 -1.3 0.05", size: "0.27 0.3" },
+    { raum: "r022", position: "-0.83 -1.3 0.05", size: "0.22 0.3" },
+    { raum: "treppeK", position: "0.2 -1.25 0.05", size: "0.21 0.4" },
+    { raum: "treppchenK", position: "-0.65 -1.3 0.05", size: "0.12 0.3" }
   ],
   neubau1: [
-    { raum: "kunstraum", position: "0.5 0 0", size: "0.3 0.3" }
+    { raum: "n11", position: "0.07 -1.18 0.05", size: "0.28 0.55" },
+    { raum: "n12", position: "-0.3 -0.95 0.05", size: "0.4 0.12" },
+    { raum: "r12", position: "-0.18 -0.71 0.05", size: "0.39 0.34" },
+    { raum: "r13", position: "0.3 -0.71 0.05", size: "0.45 0.34" },
+    { raum: "r14", position: "0.4 -1.18 0.05", size: "0.28 0.56" }
   ],
   neubau2: [
-    { raum: "it-raum", position: "-0.2 0 0.2", size: "0.2 0.2" }
+    { raum: "n21", position: "0.5 0 -0.3", size: "0.3 0.3" },
+    { raum: "r21", position: "0.5 0 0", size: "0.3 0.3" },
+    { raum: "r22", position: "0.5 0 0", size: "0.3 0.3" },
+    { raum: "r23", position: "0.5 0 0", size: "0.3 0.3" }
   ]
 };
 
@@ -1212,12 +1258,11 @@ function ladeKlickbareZonen(etage) {
     hotspot.setAttribute("position", spot.position);
     hotspot.setAttribute("width", spot.size.split(" ")[0]);
     hotspot.setAttribute("height", spot.size.split(" ")[1]);
-    hotspot.setAttribute("material", "opacity: 0.2; color: yellow; transparent: true;");
+    hotspot.setAttribute("material", "opacity: 0.5; color: yellow; transparent: true;");//opacity 0.2
     hotspot.setAttribute("class", "clickable");
 
     // Bei Klick wird der Raum geladen
     hotspot.addEventListener("click", () => {
-      //console.log(`Wechsle zu Raum: ${spot.raum}`);
       ladeRaum(spot.raum);  // Wechsel zum Raum
       schliesseGrundriss(); // Grundriss schließen
     });
@@ -1244,16 +1289,25 @@ function ladeKlickbareZonen(etage) {
     
     //vorherige Pfeile entfernt 
     document.querySelectorAll('.pfeil').forEach((el) => el.remove());
-   
+       
+    // Setze die Rotation zuerst
+
+    const camera = document.querySelector('a-camera');
+    
     const sky = document.querySelector('a-sky');
+    sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
 
-    //const camera = document.querySelector('#a-camera');
-    sky.setAttribute('rotation', raeume[raum].rotation);
+    camera.removeAttribute('look-controls');    //lookcontrol aus, damit Rotation nicht überschrieben wird
+   
+     camera.setAttribute('rotation', raeume[raum].rotation);  
 
-    // Warte kurz, bevor das Bild geladen wird (damit Rotation zuerst greift) -> set timeout
+     setTimeout(() => {
+      camera.setAttribute('look-controls', 'enabled: true');
+    }, 50);
+
+
     sky.setAttribute('src', raeume[raum].bild);
     console.log("Bild geladen:", raeume[raum].bild);
-
 
     // Aktualisiere den Grundriss
     if (raeume[raum].etage) {

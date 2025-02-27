@@ -6,7 +6,6 @@
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="assets/js/aframe-master.js"></script>
     <script src="assets/js/raumwechsel.js" defer></script>
-    <!-- <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script> -->
 
   </head>
   <body>
@@ -14,7 +13,7 @@
     <a-scene>
 
       <a-sky id="sky" src="assets/bilder/haupteingang.jpg"></a-sky>
-      <a-camera id='a-camera' position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
+      <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
         
         
 
@@ -23,49 +22,49 @@
         geometry="primitive: plane" 
         material="transparent: true"
         class="clickable" 
-        onclick="oeffneGrundriss()" >
+        onclick="oeffneGrundriss(), wechsleEtage('1')" >
         </a-image>
 
          <!-- Vergrößerter Grundriss-Container -->
 <a-entity id="grundriss-container" visible="false" position="0 1.5 -2">
 
   <!-- Grundrissbild -->
-  <a-image id="grundriss-bild" src="assets/bilder/grundriss1.png" position="0 -1 0" width="2" height="1" material="transparent: true"></a-image>
+  <a-image id="grundriss-bild" src="assets/bilder/grundriss1.png"  position="0 -1 0" width="2" height="1" material="transparent: true" opacity="1"></a-image>
 
   <!-- Etagenwechsel-Buttons -->
   <a-entity id="etagen-buttons" position="0 -1 0">
 
     <a-plane id="button-draussen" position="-1.5 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-            text="value: Draussen; align: center;" 
+            text="value: Draussen; align: center; height: 0.3; wrapCount: 8; color:white" 
             onclick="wechsleEtage('draussen')"></a-plane>
 
     <a-plane id="button-keller" position="-1 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: Keller; align: center;" 
+             text="value: Keller; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('0')"></a-plane>
 
     <a-plane id="button-1etage" position="-0.5 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: 1. Etage; align: center;" 
+             text="value: 1. Etage; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('1')"></a-plane>
 
     <a-plane position="0 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: 2. Etage; align: center;" 
+             text="value: 2. Etage; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('2')"></a-plane>
 
     <a-plane position="0.5 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: 3. Etage; align: center;" 
+             text="value: 3. Etage; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('3')"></a-plane>
 
     <a-plane position="1 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: Neubau 1; align: center;" 
+             text="value: Neubau 1; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('neubau1')"></a-plane>
 
     <a-plane position="1.5 -1 0" width="0.3" height="0.1" color="#444" class="clickable" 
-             text="value: Neubau 2; align: center;" 
+             text="value: Neubau 2; align: center; height: 0.3; wrapCount: 8; color:white" 
              onclick="wechsleEtage('neubau2')"></a-plane> 
              
              <!-- Schließen-Button -->
-  <a-plane position="1.2 0.8 0" width="0.2" height="0.2" color="red" class="clickable" 
-           text="value: X; align: center;" 
+  <a-plane position="1.2 0.8 0" width="0.2" height="0.2" color="#c53333" class="clickable" 
+           text="value: X; align: center; height: 3; wrapCount: 3; color:white" 
            onclick="schliesseGrundriss()"></a-plane>
   </a-entity>
 
