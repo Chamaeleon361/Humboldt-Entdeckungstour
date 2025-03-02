@@ -11,7 +11,7 @@
 });
 
 
-
+let aktuelleEtage = "draussen";
   
   
   //Raumdatenbank
@@ -25,7 +25,9 @@
       pfeile:[
         {ziel:'treppe01', position: '0.2 0 -4.5', rotation:'0 0 0'},
         {ziel: 'n11', position: '5 0 0', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.15 1.2",
+      grundrissPosGross: "0 0"
     },
     haupteingang_2: {
       bild: 'assets/bilder/haupteingang.jpg',
@@ -34,7 +36,8 @@
       pfeile:[
         {ziel:'treppe01', position: '-0.2 0 4.5', rotation:'0 180 0'},
         {ziel: 'n11', position: '-5 0 0', rotation: '0 180 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.15 1.2"
     },
 
     treppe01: {
@@ -45,7 +48,8 @@
         { ziel: 'haupteingang', position: '0 -1 5', rotation: '0 180 0'},
         { ziel: 'treppeK', position: '2.5 -1 -3', rotation: '0 0 0'},
         { ziel: 'treppeE1', position: '-2.8 -1 -3', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.87 1.02"
     },
     treppe01_2: {
       bild: 'assets/bilder/treppe01.jpg', 
@@ -55,7 +59,8 @@
         { ziel: 'haupteingang', position: '0 -1 -5', rotation: '0 0 0'},
         { ziel: 'treppeK', position: '-2.5 -1 3', rotation: '0 180 0'},
         { ziel: 'treppeE1', position: '2.8 -1 3', rotation: '0 180 0'}
-      ]
+      ],      
+      grundrissPosKlein: "-1.87 1.02"
     },
 
 
@@ -69,7 +74,8 @@
         { ziel: 'K2', position: '3.5 -1 -2.5', rotation: '0 -90 0'},
         { ziel: 'K4', position: '-3.5 -1 -2.5', rotation: '0 90 0'},
         { ziel: 'treppe01', position: '0 -1 5', rotation: '0 180 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.87 1.02"
     },
     treppeK_2: {
       bild: 'assets/bilder/keller/treppeK.jpg',
@@ -79,7 +85,8 @@
         { ziel: 'K2', position: '-3.5 -1 2', rotation: '0 90 0'},
         { ziel: 'K4', position: '3.5 -1 2', rotation: '0 -90 0'},
         { ziel: 'treppe01', position: '-1 -1 -5', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.87 1.02"
     },
 
     K2: {
@@ -91,7 +98,8 @@
         { ziel: 'treppeK', position: '0.3 -1 6', rotation: '0 180 0'},
         { ziel: 'r011', position: '1.5 -1 3.5', rotation: '0 -210 0'},
         { ziel: 'r007', position: '-0.8 -1 -5', rotation: '0 -40 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.7 1.19"
     },
     K2_2: {
       bild: 'assets/bilder/keller/K2.jpg',
@@ -102,7 +110,8 @@
         { ziel: 'treppeK', position: '-0.6 -0.5 -5', rotation: '0 -2 0'},
         { ziel: 'r011', position: '-2.5 -1 -2.5', rotation: '0 90 0'},
         { ziel: 'r007', position: '1.4 -1 5.2', rotation: '0 -205 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.7 1.19"
     },
     
     r007: {
@@ -111,7 +120,8 @@
       etage: '0',
       pfeile: [
         { ziel: 'K2', position: '2.5 -1 -6', rotation: '0 -20 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.65 1.38"
     },
 
     r011: {
@@ -120,7 +130,8 @@
       etage: '0',
       pfeile: [
         { ziel: 'K2', position: '-1.6 -1 3.8', rotation: '0 170 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.68 1"
     },
 
     K1: {
@@ -132,9 +143,10 @@
         { ziel: 'r008', position: '-6 -1 0.5', rotation: '0 90 0'},
         { ziel: 'r009', position: '2 -2 -3.5', rotation: '0 0 0'},
         { ziel: 'r010', position: '5 -1 -1', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.55 1.19"
     },
-    K1_2: {                                       //nicht sicher, ob nötig - > Richtung
+    K1_2: {                                       
       bild: 'assets/bilder/keller/K1.jpg',
       rotation: "0 -20 0",
       etage: '0',
@@ -143,7 +155,8 @@
         { ziel: 'r008', position: '-6 -1 0.5', rotation: '0 90 0'},
         { ziel: 'r009', position: '2 -2 -3.5', rotation: '0 0 0'},
         { ziel: 'r010', position: '5 -1 -1', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.55 1.19"
     },
 
 
@@ -154,7 +167,8 @@
       pfeile: [
         { ziel: 'K1', position: '6.7 -1 6.5', rotation: '0 -90 0'}, //3.5 -1 2.5
         { ziel: 'r009', position: '4.5 -1 -6', rotation: '0 25 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.5 1.3"
     },
 
     r009: {
@@ -165,7 +179,8 @@
         { ziel: 'K1', position: '-6 -2 2.5', rotation: '0 130 0'},
         { ziel: 'r008', position: '4 -1 0.7', rotation: '0 -70 0'},
         { ziel: 'r010', position: '-7 -1 3', rotation: '0 106 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.5 1.22"
     },
 
     r010: {
@@ -175,7 +190,8 @@
       pfeile: [
         { ziel: 'K1', position: '-2.5 -1 6.7', rotation: '0 210 0'},
         { ziel: 'r009', position: '-3.4 -1 -6.2', rotation: '0 -20 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.5 1"
     },
 
     K4: {
@@ -186,7 +202,8 @@
         { ziel: 'treppeK', position: '-0.1 -1 5', rotation: '0 180 0'},
         { ziel: 'r005', position: '1.7 -1 4', rotation: '0 155 0'},
         { ziel: 'K5', position: '0.1 -1 -5', rotation: '0 0 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.93 1.19"
     },
     K4_2: {
       bild: 'assets/bilder/keller/K4.jpg',
@@ -196,7 +213,8 @@
         { ziel: 'treppeK', position: '0.1 -1 -5', rotation: '0 0 0'},
         { ziel: 'r005', position: '-1.7 -1 -4', rotation: '0 -25 0'},
         { ziel: 'K5', position: '-0.1 -1 5', rotation: '0 180 0'},
-      ]
+      ],
+      grundrissPosKlein: "-1.93 1.19"
     },
 
     r005: {
@@ -205,7 +223,8 @@
       etage: '0',
       pfeile: [
         { ziel: 'K4', position: '6 -1 -3.8', rotation: '0 -91 0'},//6 -1 -4.3
-      ]
+      ],
+      grundrissPosKlein: "-1.93 1.38"
     },
 
     K5: {
@@ -216,7 +235,8 @@
         { ziel: 'K4', position: '-0.1 -1 5', rotation: '0 180 0'},
         { ziel: 'r004', position: '1.4 -1 3', rotation: '0 155 0'},
         { ziel: 'K6', position: '0.1 -1 -5', rotation: '0 -1 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2 1.19"
     },
     K5_2: {
       bild: 'assets/bilder/keller/K5.jpg',
@@ -235,7 +255,8 @@
       etage: '0',
       pfeile: [
         { ziel: 'K5', position: '4.8 -1 -2.7', rotation: '0 -90 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.1 1.38"
     },
   
     K6: {
@@ -1186,20 +1207,28 @@
       'neubau1': 'assets/bilder/grundrissneubau1.png',
       'neubau2': 'assets/bilder/grundrissneubau2.png'
     };
+ 
 
-    // Öffnet den Grundriss
 function oeffneGrundriss() {
-  const container = document.getElementById("grundriss-container");
-  container.setAttribute("visible", true);
+  const container = document.getElementById("grundriss-container"); 
+  container.setAttribute("visible", true);  
+  document.querySelector("#punktGross").setAttribute("visible", true);
 }
 
-// Schließt den Grundriss
+ 
 function schliesseGrundriss() {
   const container = document.getElementById("grundriss-container");
   container.setAttribute("visible", false);
+  document.querySelector("#punktGross").setAttribute("visible", false);
+
+  // Hotspot-Container entfernen (sofern vorhanden)
+  let hotspotContainer = document.getElementById("hotspot-container");
+  if (hotspotContainer) {
+    hotspotContainer.parentNode.removeChild(hotspotContainer);
+  }
 }
 
-// Wechselt den Grundriss zur gewählten Etage
+// Wechselt Grundriss zur gewählten Etage
 function wechsleEtage(etage) {
   console.log("wechsleEtage aufgerufen mit Etage:", etage);
   const grundrissBild = document.getElementById("grundriss-bild");
@@ -1207,10 +1236,18 @@ function wechsleEtage(etage) {
   if (!grundrissBild) {
     console.error("Grundriss-Bild nicht gefunden!");
     return;}
-
   grundrissBild.setAttribute("src", Grundriss[etage]);
 
-  // Neue klickbare Flächen für die gewählte Etage laden
+  const punktGross = document.getElementById("punktGross");
+  
+  // Nur wenn die ausgewählte Etage der aktuellen Etage entspricht, anzeigen:
+  if (aktuelleEtage === etage) {
+    punktGross.setAttribute("visible", true);
+  } else {
+    punktGross.setAttribute("visible", false);
+  }
+
+  // Neue klickbare Flächen für gewählte Etage laden
   ladeKlickbareZonen(etage);
 }
 
@@ -1221,7 +1258,7 @@ const raumHotspots = {
     { raum: "treppe01", position: "-0.4 -0.7 0.05", size: "0.9 0.35" },
     { raum: "n11", position: "-0.05 -1.15 0.05", size: "0.32 0.3" }
   ],
-  1: [//1
+  1: [
     { raum: "r101", position: "-0.83 -0.7 0.05", size: "0.23 0.29" },
     { raum: "r102", position: "-0.6 -0.7 0.05", size: "0.23 0.29"  },
     { raum: "r103", position: "-0.35 -0.7 0.05", size: "0.25 0.29"  },
@@ -1315,7 +1352,7 @@ function ladeKlickbareZonen(etage) {
     hotspot.setAttribute("position", spot.position);
     hotspot.setAttribute("width", spot.size.split(" ")[0]);
     hotspot.setAttribute("height", spot.size.split(" ")[1]);
-    hotspot.setAttribute("material", "opacity: 0.8; color: yellow; transparent: true;");//opacity 0.2
+    hotspot.setAttribute("material", "opacity: 0; color: yellow; transparent: true;");//opacity 0.2
     hotspot.setAttribute("class", "clickable");
 
     // Bei Klick wird der Raum geladen
@@ -1331,8 +1368,7 @@ function ladeKlickbareZonen(etage) {
 
   function ladeGrundriss(etage) {
     const GrundrissImage = document.getElementById('Grundriss');
-    console.log("Update floor plan for etage:", etage);
-    
+
     if (Grundriss[etage]) {
       console.log("Wechsel zu Etage:", Grundriss[etage]);
       GrundrissImage.setAttribute('src', Grundriss[etage]);
@@ -1343,21 +1379,19 @@ function ladeKlickbareZonen(etage) {
   
 
   function ladeRaum(raum) {
-    
+    console.log("Wechsel Raum:", raeume[raum]);
+    aktuelleEtage = raeume[raum].etage;
+
     //vorherige Pfeile entfernt 
     document.querySelectorAll('.pfeil').forEach((el) => el.remove());
        
     // Setze die Rotation zuerst
-
     const camera = document.querySelector('a-camera');
-    
     const sky = document.querySelector('a-sky');
     sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
 
     camera.removeAttribute('look-controls');    //lookcontrol aus, damit Rotation nicht überschrieben wird
-   
-     camera.setAttribute('rotation', raeume[raum].rotation);  
-
+    camera.setAttribute('rotation', raeume[raum].rotation);  
      setTimeout(() => {
       camera.setAttribute('look-controls', 'enabled: true');
     }, 50);
@@ -1378,24 +1412,49 @@ function ladeKlickbareZonen(etage) {
       const pfeilEl = document.createElement('a-entity');
       pfeilEl.setAttribute('geometry', 'primitive: triangle; vertexA: 0 -0.1 0; vertexB: -0.5 0 1; vertexC: 0.5 0 1');
       pfeilEl.setAttribute('material', 'color: white');
-   
       pfeilEl.setAttribute('position', pfeil.position); 
       pfeilEl.setAttribute('rotation', pfeil.rotation);
       pfeilEl.setAttribute("data-ziel", pfeil.ziel);
-
       pfeilEl.setAttribute("class", "pfeil"); // Klasse sicher setzen
 
       //Interaktive Pfeile
       pfeilEl.setAttribute("cursor-listener", ""); 
-      //pfeilEl.setAttribute("data-raycastable", "");
-
 
       // Elemente zur Szene hinzufügen
       const scene = document.querySelector('a-scene');
       scene.appendChild(pfeilEl);
     });
+
+    // Roter Punkt aktualisieren
+    updatePunktPositions(raum);
   
   }
+
+  // Hilfsfunktion zum Bewegen des Punktes
+function bewegePunkt(punktId, position) {
+  let punkt = document.querySelector(punktId);
+  if (punkt && position) {
+      let [x, y] = position.split(" ").map(Number);
+      // Z-Wert beibehalten, indem wir die aktuelle Position holen
+      let aktuellePosition = punkt.getAttribute("position"); // Gibt ein Objekt zurück { x, y, z }
+      let z = aktuellePosition.z; // Z-Wert aus dem Objekt holen
+
+      // Setze die neue Position
+      punkt.setAttribute("position", { x: x, y: y, z: z }); 
+    }
+}
+
+function updatePunktPositions(raum) {
+  let roomData = raeume[raum];
+  if (!roomData) {
+      console.error("Raum nicht gefunden:", raum);
+      return;
+  }
+  // Aktualisiere Punkt im kleinen/großen Grundriss
+  bewegePunkt("#punktKlein", roomData.grundrissPosKlein);
+  bewegePunkt("#punktGross", roomData.grundrissPosGross);
+}
+
   
   // Startraum laden
   ladeRaum('haupteingang');
