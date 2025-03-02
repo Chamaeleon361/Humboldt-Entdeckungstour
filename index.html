@@ -15,7 +15,51 @@
       <a-sky id="sky" src="assets/bilder/haupteingang.jpg"></a-sky>
       <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
         
-        
+      <!-- Fragezeichen-Symbol zum Öffnen/Schließen der Anleitung -->
+      <img src="assets/bilder/hilfe-icon.png" id="hilfe-icon" onclick="anzeigenHilfe()" alt="Hilfe">
+
+      <!-- Anleitung (Standardmäßig ausgeblendet) -->
+      <div id="help-text">
+        <p><strong>Anleitung:</strong></p>
+      <p></p>
+        <p>Klicke auf die Pfeile, um dich durch die Räume zu bewegen.</p>
+        <p>Klicke auf den Grundriss, um ihn zu vergrößern.</p>
+        <p>In dieser Ansicht kannst du auf Räume und Treppen (schwarze Schrift) klicken, um zu ihnen zu teleportieren.</p>
+        <p>Der rote Punkt zeigt immer deine aktuelle Position an.</p>
+        <p>Klicke das Fragezeichen erneut, um die Anleitung zu schließen.</p>
+      
+      </div>
+
+<style>
+    #hilfe-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #help-text {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 500px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        z-index: 9;
+    }
+</style>
+
 
         <!-- Kleiner Grundriss am Bildschirmrand -->
         <a-image id="Grundriss" src="assets/bilder/grundriss1.png" position="-2 1.2 -1.9" width="1.2" height="0.5" opacity="0.8"
@@ -27,11 +71,11 @@
         <a-circle id="punktKlein" position="0 0.3 -1.89" radius="0.018" color="red" opacity="0.8"></a-circle>
 
          <!-- Vergrößerter Grundriss-Container -->
-  <a-entity id="grundriss-container" visible="false" position="0 1.5 -2">
+            <a-entity id="grundriss-container" visible="false" position="0 1.5 -2">
 
-  <!-- Grundrissbild -->
-  <a-image id="grundriss-bild" src="assets/bilder/grundriss1.png"  position="0 -1 0" width="2" height="1" material="transparent: true" opacity="1"></a-image>
-  <a-circle id="punktGross" position="0 0 0.01" radius="0.04" color="#c53333" visible="false"></a-circle>
+            <!-- Grundrissbild -->
+            <a-image id="grundriss-bild" src="assets/bilder/grundriss1.png"  position="0 -1 0" width="2" height="1" material="transparent: true" opacity="1"></a-image>
+            <a-circle id="punktGross" position="0 0 0.01" radius="0.04" color="#c53333" visible="false"></a-circle>
 
   <!-- Etagenwechsel-Buttons -->
   <a-entity id="etagen-buttons" position="0 -1 0">
@@ -69,20 +113,16 @@
            text="value: X; align: center; height: 3; wrapCount: 3; color:white" 
            onclick="schliesseGrundriss()"></a-plane>
   </a-entity>
-
-
-
 </a-entity>
+
 <!-- whitelist für klickbare objekte raycaster [data-raycastable]-->
-        <a-entity 
+  <a-entity 
     cursor="fuse: false"
     raycaster="objects: .clickable, .pfeile "
     position="0 0 -1">
   </a-entity>
 
       </a-camera>
-
-
     </a-scene>
   </body>
 </html>

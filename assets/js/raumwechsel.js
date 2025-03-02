@@ -1,18 +1,20 @@
  
   AFRAME.registerComponent('cursor-listener', {
     init: function () {
-      //console.log("cursor-listener hinzugefügt zu", this.el);  // Debugging
         this.el.addEventListener('click', () => {
             const zielRaum = this.el.getAttribute("data-ziel");
-            //console.log("Geklickter Pfeil, neuer Raum:", zielRaum);//Consolelog apäter entfernen
             ladeRaum(zielRaum);
         });
     }
 });
 
+function anzeigenHilfe() {
+  var helpBox = document.getElementById("help-text");
+  var isVisible = helpBox.style.display === "block";
+  helpBox.style.display = isVisible ? "none" : "block";
+}
 
 let aktuelleEtage = "draussen";
-  
   
   //Raumdatenbank
   
