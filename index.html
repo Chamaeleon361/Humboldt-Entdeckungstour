@@ -7,30 +7,75 @@
     <script src="assets/js/aframe-master.js"></script>
     <script src="assets/js/raumwechsel.js" defer></script>
 
+    <style>
+      body {background-image: url('assets/bilder/hintergrund1.jpg'); background-size: cover; background-position: center;
+      font-family: Arial, sans-serif; text-align: center; }
+      #passwort-container { position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
+      #geschuetzter-inhalt { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%;}
+  </style>
+
   </head>
+
   <body>
-   
+
+    <div id="passwort-container">
+      <h2>Bitte DSB-Passwort eingeben:</h2>
+      <input type="password" id="passwort-eingabe" placeholder="Passwort">
+      <button onclick="pruefePasswort()">Login</button>
+      <p id="fehlermeldung" style="color: rgb(214, 34, 34); display: none;">Falsches Passwort!</p>
+    </div>
+ 
+  <div id="geschuetzter-inhalt">
+
     <a-scene>
 
       <a-sky id="sky" src="assets/bilder/haupteingang.jpg"></a-sky>
       <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
         
-      <!-- Fragezeichen-Symbol zum Öffnen/Schließen der Anleitung -->
+      <!-- Fragezeichen-Symbol Öffnen/Schließen der Anleitung -->
       <img src="assets/bilder/hilfe-icon.png" id="hilfe-icon" onclick="anzeigenHilfe()" alt="Hilfe">
 
+      <!-- <img src="assets/bilder/DSB-icon.PNG" id="DSB-icon" onclick="anzeigenDSB()" alt="DSB">
+      <div id="iframe-container">
+        <iframe src="https://www.dsbmobile.de" width="100%" height="100%"></iframe>
+    </div> -->
+
       <!-- Anleitung (Standardmäßig ausgeblendet) -->
-      <div id="help-text">
-        <p><strong>Anleitung:</strong></p>
-      <p></p>
-        <p>Klicke auf die Pfeile, um dich durch die Räume zu bewegen.</p>
-        <p>Klicke auf den Grundriss, um ihn zu vergrößern.</p>
-        <p>In dieser Ansicht kannst du auf Räume und Treppen (schwarze Schrift) klicken, um zu ihnen zu teleportieren.</p>
-        <p>Der rote Punkt zeigt immer deine aktuelle Position an.</p>
-        <p>Klicke das Fragezeichen erneut, um die Anleitung zu schließen.</p>
+      <div id="hilfe-text">
+        <p><strong>Willkommen zur Humboldt-Entdeckungstour</strong></p>
+      <p> </p>
+        <p class="links">> Zieh mit gedrückter Maustaste, um dich umzugucken.</p>
+        <p class="links">> Klicke auf die Pfeile, um dich durch die Räume zu bewegen.</p>
+        <p class="links">> Klicke auf den Grundriss, um ihn zu vergrößern.</p>
+        <p class="links">> In dieser Ansicht kannst du auf Räume und Treppen (schwarze Schrift) klicken, um zu ihnen zu teleportieren.</p>
+        <p class="links">> Der rote Punkt zeigt immer deine aktuelle Position an.</p>
+        <p class="links">> Klicke das Fragezeichen erneut, um die Anleitung zu schließen.</p>
       
       </div>
 
 <style>
+  #DSB-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 90px;
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+    #iframe-container { /*noch Fehlerhaft*/
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            z-index: 9;
+        }
+
+
     #hilfe-icon {
         display: block;
         position: absolute;
@@ -42,9 +87,9 @@
         z-index: 10;
     }
 
-    #help-text {
+    #hilfe-text {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -57,7 +102,13 @@
         font-size: 16px;
         text-align: center;
         z-index: 9;
-    }
+       }
+
+.links {
+    text-align: left;
+    margin-left: 10px; 
+}
+    
 </style>
 
 
@@ -75,7 +126,7 @@
 
             <!-- Grundrissbild -->
             <a-image id="grundriss-bild" src="assets/bilder/grundriss1.png"  position="0 -1 0" width="2" height="1" material="transparent: true" opacity="1"></a-image>
-            <a-circle id="punktGross" position="0 0 0.01" radius="0.04" color="#c53333" visible="false"></a-circle>
+            <a-circle id="punktGross" position="0 -10 0" radius="0.04" color="#c53333" visible="false"></a-circle> 
 
   <!-- Etagenwechsel-Buttons -->
   <a-entity id="etagen-buttons" position="0 -1 0">
@@ -124,6 +175,7 @@
 
       </a-camera>
     </a-scene>
+   </div>
   </body>
 </html>
 

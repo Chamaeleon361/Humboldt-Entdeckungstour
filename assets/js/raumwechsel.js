@@ -1,5 +1,25 @@
  
-  AFRAME.registerComponent('cursor-listener', {
+ document.getElementById("passwort-eingabe").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      pruefePasswort();
+  }
+});
+
+function pruefePasswort() {
+  const korrektesPasswort = "a"; //DSB PASSWORT dsb2013 (hier Änderungen)
+  let eingabe = document.getElementById("passwort-eingabe").value;
+  let fehlermeldung = document.getElementById("fehlermeldung");
+
+  if (eingabe === korrektesPasswort) {
+      document.getElementById("passwort-container").style.display = "none";
+      document.getElementById('geschuetzter-inhalt').style.visibility = 'visible';
+  } else {
+      fehlermeldung.style.display = "block";
+  }
+}
+
+
+ AFRAME.registerComponent('cursor-listener', {
     init: function () {
         this.el.addEventListener('click', () => {
             const zielRaum = this.el.getAttribute("data-ziel");
@@ -8,10 +28,17 @@
     }
 });
 
+
 function anzeigenHilfe() {
-  var helpBox = document.getElementById("help-text");
-  var isVisible = helpBox.style.display === "block";
-  helpBox.style.display = isVisible ? "none" : "block";
+  var hBox = document.getElementById("hilfe-text");
+  var sichtbar = hBox.style.display === "block";
+  hBox.style.display = sichtbar ? "none" : "block";
+}
+
+ function anzeigenDSB() {
+ var Box = document.getElementById("iframe-container");
+ var sichtbar = Box.style.display === "block";
+ Box.style.display = sichtbar ? "none" : "block";
 }
 
 let aktuelleEtage = "draussen";
@@ -1020,7 +1047,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r12', position: '3 -1 -8', rotation: '0 0 0'},
         { ziel: 'r13', position: '-2 -1 -8', rotation: '0 0 0'},
         { ziel: 'r14', position: '5 -1 -2.56', rotation: '0 -88 0'},
-        { ziel: 'n11_2', position: '-3 -1 -6.5', rotation: '0 -24 0'},
+        { ziel: 'n12', position: '-3 -1 -6.5', rotation: '0 -24 0'},
         {ziel: 'haupteingang', position: '-3 -1 8', rotation: '0 -160 0'}
       ]
     },
@@ -1032,7 +1059,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r12', position: '-3 -1 8', rotation: '0 180 0'},
         { ziel: 'r13', position: '2 -1 8', rotation: '0 180 0'},
         { ziel: 'r14', position: '-5 -1 2.56', rotation: '0 92 0'},
-        { ziel: 'n11_2', position: '3 -1 6.5', rotation: '0 156 0'},
+        { ziel: 'n12', position: '3 -1 6.5', rotation: '0 156 0'},
         {ziel: 'haupteingang', position: '3 -1 -8', rotation: '0 20 0'}
       ]
     },
@@ -1061,7 +1088,7 @@ let aktuelleEtage = "draussen";
       rotation: "0 90 0",
       etage: 'neubau2',
       pfeile: [
-        { ziel: 'n12', position: '1.3 -1 6', rotation: '0 180 0'},
+        { ziel: 'n12_2', position: '1.3 -1 6', rotation: '0 180 0'},
         { ziel: 'n22', position: '6 -1 -2', rotation: '0 -91 0'},
         { ziel: 'r21', position: '-1.8 -1 6.2', rotation: '0 -155 0'},
         { ziel: 'r22', position: '-3 -1 0.7', rotation: '0 92 0'},
@@ -1075,7 +1102,7 @@ let aktuelleEtage = "draussen";
       rotation: "0 -90 0",
       etage: 'neubau2',
       pfeile: [
-        { ziel: 'n12', position: '-1.3 -1 -6', rotation: '0 0 0'},
+        { ziel: 'n12_2', position: '-1.3 -1 -6', rotation: '0 0 0'},
         { ziel: 'n22', position: '-6 -1 2', rotation: '0 89 0'},
         { ziel: 'r21', position: '1.8 -1 -6.2', rotation: '0 25 0'},
         { ziel: 'r22', position: '3 -1 -0.7', rotation: '0 -88 0'},
@@ -1259,18 +1286,18 @@ function wechsleEtage(etage) {
 
   const punktGross = document.getElementById("punktGross");
   
-  // Nur wenn die ausgewählte Etage der aktuellen Etage entspricht, anzeigen:
+  //nur wenn ausgewählte Etage = aktuellen Etage 
   if (aktuelleEtage === etage) {
     punktGross.setAttribute("visible", true);
   } else {
     punktGross.setAttribute("visible", false);
   }
 
-  // Neue klickbare Flächen für gewählte Etage laden
+  //Hotspots für gewählte Etage laden
   ladeKlickbareZonen(etage);
 }
 
-//alle raume zuordnen
+//alle Räume zuordnen
 const raumHotspots = {
   draussen: [
     { raum: "haupteingang", position: "-0.4 -0.95 0.05", size: "0.5 0.14" },
@@ -1346,7 +1373,7 @@ const raumHotspots = {
     { raum: "r25", position: "-0.36 -1.19 0.05", size: "0.32 0.35" },
     { raum: "n21", position: "0.01 -1.12 0.05", size: "0.34 0.51" },
     { raum: "n21", position: "-0.32 -0.94 0.05", size: "0.35 0.15" },
-    { raum: "n23/treppedr", position: "0.01 -1.45 0.05", size: "0.34 0.15" }//falls wir schaffen draußen treppe
+    //{ raum: "n23/treppedr", position: "0.01 -1.45 0.05", size: "0.34 0.15" } falls wir schaffen draußen treppe
   ]
 };
 
@@ -1373,20 +1400,20 @@ function ladeKlickbareZonen(etage) {
     hotspot.setAttribute("position", spot.position);
     hotspot.setAttribute("width", spot.size.split(" ")[0]);
     hotspot.setAttribute("height", spot.size.split(" ")[1]);
-    hotspot.setAttribute("material", "opacity: 0.5; color: yellow; transparent: true;");//opacity 0.2
+    hotspot.setAttribute("material", "opacity: 0; color: yellow; transparent: true;");
     hotspot.setAttribute("class", "clickable");
 
     // Bei Klick wird der Raum geladen
     hotspot.addEventListener("click", () => {
-      ladeRaum(spot.raum);  // Wechsel zum Raum
-      schliesseGrundriss(); // Grundriss schließen
+      ladeRaum(spot.raum);
+      schliesseGrundriss(); 
     });
 
     hotspotContainer.appendChild(hotspot);
   });
 }
 
-
+//Grundriss klein 
   function ladeGrundriss(etage) {
     const GrundrissImage = document.getElementById('Grundriss');
 
@@ -1436,7 +1463,7 @@ function ladeKlickbareZonen(etage) {
       pfeilEl.setAttribute('position', pfeil.position); 
       pfeilEl.setAttribute('rotation', pfeil.rotation);
       pfeilEl.setAttribute("data-ziel", pfeil.ziel);
-      pfeilEl.setAttribute("class", "pfeil"); // Klasse sicher setzen
+      pfeilEl.setAttribute("class", "pfeil"); 
 
       //Interaktive Pfeile
       pfeilEl.setAttribute("cursor-listener", ""); 
@@ -1456,9 +1483,9 @@ function bewegePunkt(punktId, position) {
   let punkt = document.querySelector(punktId);
   if (punkt && position) {
       let [x, y] = position.split(" ").map(Number);
-      // Z-Wert beibehalten, indem wir die aktuelle Position holen
-      let aktuellePosition = punkt.getAttribute("position"); // Gibt ein Objekt zurück { x, y, z }
-      let z = aktuellePosition.z; // Z-Wert aus dem Objekt holen
+      // Z-Wert beibehalten, indem aktuelle Position holen
+      let aktuellePosition = punkt.getAttribute("position"); 
+      let z = aktuellePosition.z; 
 
       // Setze die neue Position
       punkt.setAttribute("position", { x: x, y: y, z: z }); 
@@ -1466,14 +1493,14 @@ function bewegePunkt(punktId, position) {
 }
 
 function updatePunktPositions(raum) {
-  let roomData = raeume[raum];
-  if (!roomData) {
+  let rDaten = raeume[raum];
+  if (!rDaten) {
       console.error("Raum nicht gefunden:", raum);
       return;
   }
   // Aktualisiere Punkt im kleinen/großen Grundriss
-  bewegePunkt("#punktKlein", roomData.grundrissPosKlein);
-  bewegePunkt("#punktGross", roomData.grundrissPosGross);
+  bewegePunkt("#punktKlein", rDaten.grundrissPosKlein);
+  bewegePunkt("#punktGross", rDaten.grundrissPosGross);
 }
 
   
