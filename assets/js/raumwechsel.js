@@ -35,12 +35,6 @@ function anzeigenHilfe() {
   hBox.style.display = sichtbar ? "none" : "block";
 }
 
- function anzeigenDSB() {
- var Box = document.getElementById("iframe-container");
- var sichtbar = Box.style.display === "block";
- Box.style.display = sichtbar ? "none" : "block";
-}
-
 let aktuelleEtage = "draussen";
   
   //Raumdatenbank
@@ -104,7 +98,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'K4', position: '-3.5 -1 -2.5', rotation: '0 90 0'},
         { ziel: 'treppe01', position: '0 -1 5', rotation: '0 180 0'}
       ],
-      grundrissPosKlein: "-1.87 1.02"
+      grundrissPosKlein: "-1.87 1.10"
     },
     treppeK_2: {
       bild: 'assets/bilder/keller/treppeK.jpg',
@@ -115,7 +109,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'K4', position: '3.5 -1 2', rotation: '0 -90 0'},
         { ziel: 'treppe01', position: '-1 -1 -5', rotation: '0 0 0'}
       ],
-      grundrissPosKlein: "-1.87 1.02"
+      grundrissPosKlein: "-1.87 1.10"
     },
 
     K2: {
@@ -146,21 +140,23 @@ let aktuelleEtage = "draussen";
     r007: {
       bild: 'assets/bilder/keller/007.jpg',
       rotation: "0 130 0",
+      beschreibung: "007 Relgion",
       etage: '0',
       pfeile: [
         { ziel: 'K2', position: '2.5 -1 -6', rotation: '0 -20 0'},
       ],
-      grundrissPosKlein: "-1.65 1.38"
+      grundrissPosKlein: "-1.68 1.297"
     },
 
     r011: {
       bild: 'assets/bilder/keller/011.jpg',
       rotation: "0 20 0",
+      beschreibung: "011 Schülersprecher",
       etage: '0',
       pfeile: [
         { ziel: 'K2', position: '-1.6 -1 3.8', rotation: '0 170 0'},
       ],
-      grundrissPosKlein: "-1.68 1"
+      grundrissPosKlein: "-1.7 1.09"
     },
 
     K1: {
@@ -168,7 +164,7 @@ let aktuelleEtage = "draussen";
       rotation: "0 -20 0",
       etage: '0',
       pfeile: [
-        { ziel: 'K2', position: '2 -1 5', rotation: '0 180 0'},
+        { ziel: 'K2_2', position: '2 -1 5', rotation: '0 180 0'},
         { ziel: 'r008', position: '-6 -1 0.5', rotation: '0 90 0'},
         { ziel: 'r009', position: '2 -2 -3.5', rotation: '0 0 0'},
         { ziel: 'r010', position: '5 -1 -1', rotation: '0 -90 0'}
@@ -192,6 +188,7 @@ let aktuelleEtage = "draussen";
     r008: {
       bild: 'assets/bilder/keller/008.jpg',
       rotation: "0 -33 0",
+      beschreibung: "008 5. Klasseraum",
       etage: '0',
       pfeile: [
         { ziel: 'K1', position: '6.7 -1 6.5', rotation: '0 -90 0'}, //3.5 -1 2.5
@@ -203,24 +200,26 @@ let aktuelleEtage = "draussen";
     r009: {
       bild: 'assets/bilder/keller/009_1.jpg',
       rotation: "0 135 0",
+      beschreibung: "009 LUBK Vorbereitungsraum",
       etage: '0',
       pfeile: [
         { ziel: 'K1', position: '-6 -2 2.5', rotation: '0 130 0'},
         { ziel: 'r008', position: '4 -1 0.7', rotation: '0 -70 0'},
         { ziel: 'r010', position: '-7 -1 3', rotation: '0 106 0'},
       ],
-      grundrissPosKlein: "-1.5 1.22"
+      grundrissPosKlein: "-1.46 1.24"
     },
 
     r010: {
       bild: 'assets/bilder/keller/010.jpg',
       rotation: "0 155 0",
+      beschreibung: "010",
       etage: '0',
       pfeile: [
         { ziel: 'K1', position: '-2.5 -1 6.7', rotation: '0 210 0'},
         { ziel: 'r009', position: '-3.4 -1 -6.2', rotation: '0 -20 0'},
       ],
-      grundrissPosKlein: "-1.5 1"
+      grundrissPosKlein: "-1.48 1.09"
     },
 
     K4: {
@@ -250,10 +249,11 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/keller/005.jpg',
       rotation: "0 -1 0",
       etage: '0',
+      beschreibung: "005 Deutsch/Latein",
       pfeile: [
-        { ziel: 'K4', position: '6 -1 -3.8', rotation: '0 -91 0'},//6 -1 -4.3
+        { ziel: 'K4', position: '6 -1 -3.8', rotation: '0 -91 0'},
       ],
-      grundrissPosKlein: "-1.93 1.38"
+      grundrissPosKlein: "-1.96 1.297"
     },
 
     K5: {
@@ -261,7 +261,7 @@ let aktuelleEtage = "draussen";
       rotation: "0 -115 0",
       etage: '0',
       pfeile: [
-        { ziel: 'K4', position: '-0.1 -1 5', rotation: '0 180 0'},
+        { ziel: 'K4_2', position: '-0.1 -1 5', rotation: '0 180 0'},
         { ziel: 'r004', position: '1.4 -1 3', rotation: '0 155 0'},
         { ziel: 'K6', position: '0.1 -1 -5', rotation: '0 -1 0'},
       ],
@@ -272,20 +272,22 @@ let aktuelleEtage = "draussen";
       rotation: "0 65 0",
       etage: '0',
       pfeile: [
-        { ziel: 'K4', position: '0.1 -1 -5', rotation: '0 0 0'},
+        { ziel: 'K4_2', position: '0.1 -1 -5', rotation: '0 0 0'},
         { ziel: 'r004', position: '-1.4 -1 -2.7', rotation: '0 -25 0'},
         { ziel: 'K6', position: '0 -1 5', rotation: '0 179 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2 1.19"
     },
 
     r004: {
       bild: 'assets/bilder/keller/004.jpg',
       rotation: "0 -56 0",
+      beschreibung: "004 Latein",
       etage: '0',
       pfeile: [
         { ziel: 'K5', position: '4.8 -1 -2.7', rotation: '0 -90 0'},
       ],
-      grundrissPosKlein: "-2.1 1.38"
+      grundrissPosKlein: "-2.15 1.297"
     },
   
     K6: {
@@ -293,18 +295,20 @@ let aktuelleEtage = "draussen";
       rotation: "0 -43 0",
       etage: '0',
       pfeile: [
-        { ziel: 'K5', position: '-0.1 -1 5', rotation: '0 180 0'},
+        { ziel: 'K5_2', position: '-0.1 -1 5', rotation: '0 180 0'},
         { ziel: 'K7', position: '0.1 -1 -5', rotation: '0 2 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.28 1.19"
     },
     K6_2: {
       bild: 'assets/bilder/keller/K6.jpg',
       rotation: "0 137 0",
       etage: '0',
       pfeile: [
-        { ziel: 'K5', position: '0.1 -1 -5', rotation: '0 0 0'},
+        { ziel: 'K5_2', position: '0.1 -1 -5', rotation: '0 0 0'},
         { ziel: 'K7', position: '-0.1 -1 5', rotation: '0 -178 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.28 1.19"
     },
 
     K7: {
@@ -314,9 +318,10 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'r021', position: '-2.3 -1 -3.5', rotation: '0 90 0'},
         { ziel: 'r001', position: '2 -1 -0.25', rotation: '0 -90 0'},
-        { ziel: 'K6', position: '0.25 -1 5', rotation: '0 180 0'},
+        { ziel: 'K6_2', position: '0.25 -1 5', rotation: '0 180 0'},
         { ziel: 'treppchenE1', position: '-3 -1 1.6', rotation: '0 92 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.42 1.19"
     },
     K7_2: {
       bild: 'assets/bilder/keller/K7.jpg',
@@ -325,27 +330,32 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'r021', position: '2.3 -1 3.5', rotation: '0 -90 0'},
         { ziel: 'r001', position: '-2 -1 0.25', rotation: '0 90 0'},
-        { ziel: 'K6', position: '-0.25 -1 -5', rotation: '0 0 0'},
+        { ziel: 'K6_2', position: '-0.25 -1 -5', rotation: '0 0 0'},
         { ziel: 'treppchenE1', position: '3 -1 -1.6', rotation: '0 -88 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.42 1.19"
     },
 
     r001: {
       bild: 'assets/bilder/keller/001.jpg',
-      rotation: "0 -65 0",
+      rotation: "0 -146 0",
       etage: '0',
+      beschreibung: "001 Latein",
       pfeile: [
-        { ziel: 'K7', position: '1 -1 1.3', rotation: '0 223 0'},
-      ]
+        { ziel: 'K7_2', position: '4 -1 0', rotation: '0 -61 0'},
+      ],
+      grundrissPosKlein: "-2.49 1.297"
     },
 
     r021: {
       bild: 'assets/bilder/keller/021.jpg',
       rotation: "0 -65 0",
       etage: '0',
+      beschreibung: "021 Vorbereitungsraum",
       pfeile: [
-        { ziel: 'K7', position: '1 -1 1.3', rotation: '0 223 0'},
-      ]
+        { ziel: 'K7_2', position: '1 -1 1.3', rotation: '0 223 0'},
+      ],
+      grundrissPosKlein: "-2.48 1.09"
     },
   
   //1.Etage
@@ -358,7 +368,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppe12', position: '-2.7 -1 -3.7', rotation: '0 -2 0'},
         { ziel: 'E11_2', position: '-6 -1 -0.65', rotation: '0 88 0'},
         { ziel: 'E13', position: '6 -1 -0.5', rotation: '0  -88 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.86 1.19",
     },
 
     E11_2: {
@@ -371,7 +382,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r106', position: '-5 -1 -0.6', rotation: '0 90 0'},
         { ziel: 'r105', position: '-1.3 -1 6.8', rotation: '0 207 0'},
         { ziel: 'r109', position: '1.2 -1 11.5', rotation: '0 155 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.6 1.19",
     },
     E11: {
       bild: 'assets/bilder/1etage/E11.jpg',
@@ -379,47 +391,56 @@ let aktuelleEtage = "draussen";
       etage: '1',
       pfeile: [
         { ziel: 'treppeE1', position: '0 -1 -3.2', rotation: '0 0 0'},
-        { ziel: 'r108', position: '-1.3 -1 -5.2', rotation: '0 -27 0'},
+        { ziel: 'r108', position: '-1.3 -1 -5.5', rotation: '0 -27 0'},
         { ziel: 'r106', position: '5 -1 0.3', rotation: '0 -90 0'},
         { ziel: 'r105', position: '1 -1 -6.8', rotation: '0 27 0'},
-        { ziel: 'r109', position: '-1.5 -1 -11.5', rotation: '0 -25 0'}
-      ]
+        { ziel: 'r109', position: '-1.3 -1 -8', rotation: '0 45 0'}
+      ],
+      grundrissPosKlein: "-1.6 1.19",
     },
 
     r105: {
       bild: 'assets/bilder/1etage/105.jpg',
       rotation: "0 160 0",
       etage: '1',
+      beschreibung: "105 Sprachen",
       pfeile: [
         { ziel: 'E11', position: '3.3 -1 -5', rotation: '0 21 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.68 1.3",
     },
 
     r106: {
       bild: 'assets/bilder/1etage/106.jpg',
       rotation: "0 -120 0",
-      etage: '1',
+      etage: '1',      
+      beschreibung: "106 Physik",
       pfeile: [
         { ziel: 'E11', position: '0 -1 5.7', rotation: '0 152 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.49 1.3",
     },
 
     r108: {
       bild: 'assets/bilder/1etage/108h.jpg',
       rotation: "0 192 0",
       etage: '1',
+      beschreibung: "108 Physik",
       pfeile: [
         { ziel: 'E11_2', position: '0 -1 6', rotation: '0 205 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.51 1.08",
     },
 
     r109: {
       bild: 'assets/bilder/1etage/109.jpg',
       rotation: "0 22 0",
       etage: '1',
+      beschreibung: "109 Sozialarbeiter",
       pfeile: [
-        { ziel: 'E11_2', position: '-1 -1 3', rotation: '0 180 0'} 
-      ]
+        { ziel: 'E11', position: '-1 -1 3', rotation: '0 180 0'} 
+      ],
+      grundrissPosKlein: "-1.7 1.08",
     },
 
     E13_2: {
@@ -429,8 +450,10 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'treppeE1', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'},
         { ziel: 'r104', position: '-1 -1 -2.7', rotation: '0 -35 0'},
-        { ziel: 'r103', position: '-1.6 -1 5.3', rotation: '0 202 0'}
-      ]
+        { ziel: 'r103', position: '-1.6 -1 5.3', rotation: '0 202 0'},
+        { ziel: 'E14', position: '-0.2 -1 3.8', rotation: '0 -182 0'}
+      ],
+      grundrissPosKlein: "-2.1 1.19",
     },
     E13: {
       bild: 'assets/bilder/1etage/E13.jpg',
@@ -439,26 +462,32 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'treppeE1', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
         { ziel: 'r104', position: '1 -1 2.7', rotation: '0 145 0'},
-        { ziel: 'r103', position: '1.6 -1 -5.3', rotation: '0 22 0'}
-      ]
+        { ziel: 'r103', position: '1.6 -1 -5.3', rotation: '0 22 0'},
+        { ziel: 'E14', position: '0.2 -1 -3.8', rotation: '0 182 0'}
+      ],
+      grundrissPosKlein: "-2.1 1.19",
     },
 
     r104: {
       bild: 'assets/bilder/1etage/104.jpg',
       rotation: "0 -71 0",
       etage: '1',
+      beschreibung: "104 Sprachen",
       pfeile: [
         { ziel: 'E13', position: '3 -1 7.5', rotation: '0 160 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.03 1.3",
     },
 
     r103: {
       bild: 'assets/bilder/1etage/103.jpg',
       rotation: "0 -9 0",
       etage: '1',
+      beschreibung: "103 Sprachen",
       pfeile: [
         { ziel: 'E13', position: '4.3 -1 -3.3', rotation: '0 20 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.2 1.3",
     },
 
     E14: {
@@ -468,7 +497,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E15', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'},
         { ziel: 'E13_2', position: '-0.2 -1 3.8', rotation: '0 177.4 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.21 1.19",
     },
     E14_2: {
       bild: 'assets/bilder/1etage/E14.jpg',
@@ -477,7 +507,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E13_2', position: '0.2 -1 -3.8', rotation: '0 -3.6 0'},
         { ziel: 'E15', position: '-0.2 -1 3.8', rotation: '0 178 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.21 1.19",
     },
 
     E15: {
@@ -488,7 +519,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'E14_2', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
         { ziel: 'r102', position: '2 -1 3.8', rotation: '0 -93 0'}, 
         { ziel: 'E16', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.3 1.19",
     },
     E15_2: {
       bild: 'assets/bilder/1etage/E15.jpg',
@@ -498,16 +530,19 @@ let aktuelleEtage = "draussen";
         { ziel: 'E16', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
         { ziel: 'r102', position: '-1 -1 -4.3', rotation: '0 -27 0'}, 
         { ziel: 'E14_2', position: '0.2 -1 -3.8', rotation: '0 -2.6 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.21 1.19",
     },
 
     r102: {
       bild: 'assets/bilder/1etage/102.jpg',
       rotation: "0 97 0",
       etage: '1',
+      beschreibung: "102 Sprachen",
       pfeile: [
         { ziel: 'E15', position: '3.2 -1 -3.3', rotation: '0 20 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.36 1.3",
     },
 
     E16: {
@@ -519,7 +554,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppchenE1', position: '-2 -1 3.8', rotation: '0 204 0'},
         { ziel: 'r101', position: '1.2 -1 3', rotation: '0 -204 0'},
         { ziel: 'r117', position: '-1.6 -1 -2.2', rotation: '0 -23 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.45 1.19",
     },
     E16_2: {
       bild: 'assets/bilder/1etage/E16.jpg',
@@ -530,25 +566,30 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppchenE1', position: '2 -1 -3.8', rotation: '0 24 0'},
         { ziel: 'r101', position: '-1.2 -1 -3', rotation: '0 -24 0'},
         { ziel: 'r117', position: '1.6 -1 2.2', rotation: '0 157 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.45 1.19",
     },
 
     r101: {
       bild: 'assets/bilder/1etage/101.jpg',
       rotation: "0 60 0",
       etage: '1',
+      beschreibung: "101 Geografie",
       pfeile: [
         { ziel: 'E16', position: '4 -1 -6.7', rotation: '0 20 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.3",
     },
 
     r117: {
       bild: 'assets/bilder/1etage/117.jpg',
       rotation: "0 88 0",
       etage: '1',
+      beschreibung: "117 Geografie",
       pfeile: [
         { ziel: 'E16_2', position: '3.5 -1 -7', rotation: '0 0 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.08",
     },
 
     treppchenE1: {
@@ -559,7 +600,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'E16_2', position: '1.2 -1 2', rotation: '0 180 0'},
         { ziel: 'treppchenE2', position: '-1.5 -1 -1.3', rotation: '0 0 0'}, 
         { ziel: 'K7', position: '1.5 -1 -1.3', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.395 1.045",
     },
   
   //2. Etage
@@ -571,7 +613,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'treppeE1', position: '2.5 -1 -3', rotation: '0 2 0'},
         { ziel: 'treppeE2', position: '-2.9 -1 -3', rotation: '0 0 0'}        
-      ]
+      ],
+      grundrissPosKlein: "-1.87 1.02"
     },
 
     treppeE2: {
@@ -582,47 +625,54 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppe23', position: '-2.7 -1 -2.8', rotation: '0 0 0'},
         { ziel: 'treppe12', position: '2.5 -1 -2.9', rotation: '0 0 0'},
         { ziel: 'E22', position: '6 -1 -0.1', rotation: '0 -90 0'},
-        { ziel: 'r210h', position: '0 0 0', rotation: '0 90 0'},
-        { ziel: 'r208', position: '0 0 0', rotation: '0 90 0'},
-        { ziel: 'r207', position: '0 0 0', rotation: '0 90 0'}        
-      ]
+        { ziel: 'E21', position: '-6 -1 -0.1', rotation: '0 90 0'},        
+      ],
+      grundrissPosKlein: "-1.86 1.19",
     },
     
     r207: {
       bild: 'assets/bilder/2etage/207.jpg',
       rotation: "0 65 0",
       etage: '2',
+      beschreibung: "207 Biologie",
       pfeile: [
-        { ziel: 'E21', position: '4 -1 -5.5', rotation: '0 17 0'} 
-      ]
+        { ziel: 'E21_2', position: '4 -1 -5.5', rotation: '0 17 0'} 
+      ],
+      grundrissPosKlein: "-1.68 1.3",
     },
 
     r208: {
       bild: 'assets/bilder/2etage/208.jpg',
       rotation: "0 -120 0",
       etage: '2',
+      beschreibung: "208 Chemie",
       pfeile: [
-        { ziel: 'E21_2', position: '0 -1 7.5', rotation: '0 152 0'} 
-      ]
+        { ziel: 'E21', position: '0 -1 7.5', rotation: '0 152 0'} 
+      ],
+      grundrissPosKlein: "-1.49 1.3",
     },
 
     r210h: {
       bild: 'assets/bilder/2etage/210h.jpg',
       rotation: "0 74 0",
       etage: '2',
+      beschreibung: "210 Chemie",
       pfeile: [
-        { ziel: 'E21', position: '0 -1 5', rotation: '0 -157.5 0'},
+        { ziel: 'E21_2', position: '0 -1 5', rotation: '0 -157.5 0'},
         { ziel: 'r210', position: '0 -1 -3.8', rotation: '0 0 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.51 1.08",
     },
 
     r210: {
       bild: 'assets/bilder/2etage/210.jpg',
       rotation: "0 38 0",
       etage: '2',
+      beschreibung: "210 Chemie",
       pfeile: [
         { ziel: 'r210h', position: '0 -1 3.8', rotation: '0 178 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.51 1.08",
     },
 
     E21: {
@@ -631,10 +681,11 @@ let aktuelleEtage = "draussen";
       etage: '2',
       pfeile: [
         { ziel: 'treppeE2', position: '0 -1 3.8', rotation: '0 180 0'},
-        { ziel: 'r210', position: '2.2 -1 3.9', rotation: '0 -90 0'},
+        { ziel: 'r210h', position: '2.2 -1 3.9', rotation: '0 -90 0'},
         { ziel: 'r207', position: '-1.6 -1 6.3', rotation: '0 -155 0'},
         { ziel: 'r208', position: '-7 -1 -1.5', rotation: '0 90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.6 1.19",
     },
     E21_2: {
       bild: 'assets/bilder/2etage/E21.jpg',
@@ -645,34 +696,66 @@ let aktuelleEtage = "draussen";
         { ziel: 'r210', position: '-2.2 -1 -3.9', rotation: '0 90 0'},
         { ziel: 'r207', position: '1.6 -1 -6.3', rotation: '0 25 0'},
         { ziel: 'r208', position: '7 -1 1.5', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.6 1.19",
     },
 
     r204: {
       bild: 'assets/bilder/2etage/204.jpg',
       rotation: "0 -36 0",
       etage: '2',
+      beschreibung: "204 Sprachen",
       pfeile: [
-        { ziel: 'E22', position: '-0.2 -1 1.5', rotation: '0 180 0'} 
-      ]
+        { ziel: 'E22_2', position: '-0.2 -1 1.5', rotation: '0 180 0'} 
+      ],
+      grundrissPosKlein: "-1.92 1.3",
     },
 
     r212: {
       bild: 'assets/bilder/2etage/212.jpg',
       rotation: "0 -35 0",
       etage: '2',
+      beschreibung: "212 Oberstufenkoordination",
       pfeile: [
-        { ziel: 'E22', position: '-0.6 -1 1.6', rotation: '0 162 0'} 
-      ]
+        { ziel: 'E22_2', position: '-0.6 -1 1.6', rotation: '0 162 0'} 
+      ],
+      grundrissPosKlein: "-2.01 1.08",
     },
 
     r213: {
       bild: 'assets/bilder/2etage/213.jpg',
       rotation: "0 -118 0",
       etage: '2',
+      beschreibung: "213 Sanitäterraum",
       pfeile: [
         { ziel: 'E22', position: '0 -1 2.3', rotation: '0 180 0'} 
       ]
+    },
+
+    E22: {
+      bild: 'assets/bilder/2etage/E22.jpg',
+      rotation: "0 49 0",
+      pfeile: [
+        { ziel: 'E23', position: '0.2 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'treppeE2', position: '0.3 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'r204', position: '2.5 -1 1', rotation: '0 -90 0'},
+        { ziel: 'r212', position: '-1 -1 3.5', rotation: '0 -155 0'},
+        { ziel: 'r213', position: '-1.2 -1 -3.2', rotation: '0 -27 0'}
+      ],
+      grundrissPosKlein: "-2.08 1.19",
+    },
+
+    E22_2: {
+      bild: 'assets/bilder/2etage/E22.jpg',
+      rotation: "0 -131 0",
+      pfeile: [
+        { ziel: 'E23', position: '-0.2 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'treppeE2', position: '-0.3 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'r204', position: '-2.5 -1 -1', rotation: '0 90 0'},
+        { ziel: 'r212', position: '1 -1 -3.5', rotation: '0 25 0'},
+        { ziel: 'r213', position: '1.2 -1 3.2', rotation: '0 153 0'}
+      ],
+      grundrissPosKlein: "-2.08 1.19",
     },
 
     E23: {
@@ -683,7 +766,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'E24', position: '0.3 -1 -3.8', rotation: '0 0 0'},
         { ziel: 'E22_2', position: '-0.2 -1 3.8', rotation: '0 175 0'},
         { ziel: 'r203', position: '2 -1 -4.5', rotation: '0 23 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.1 1.19",
     },
     E23_2: {
       bild: 'assets/bilder/2etage/E23.jpg',
@@ -693,16 +777,19 @@ let aktuelleEtage = "draussen";
         { ziel: 'E24', position: '0.1 -1 3.8', rotation: '0 183 0'},
         { ziel: 'E22_2', position: '-0.2 -1 -3.8', rotation: '0 0 0'},
         { ziel: 'r203', position: '-1.5 -1 4.5', rotation: '0 -155 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.1 1.19",
     },
 
     r203: {
       bild: 'assets/bilder/2etage/203.jpg',
       rotation: "0 -90 0",
       etage: '2',
+      beschreibung: "203 Sprachen",
       pfeile: [
         { ziel: 'E23', position: '5.8 -1 0.9', rotation: '0 -90 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.15 1.3",
     },
 
     E24: {
@@ -712,8 +799,9 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E23_2', position: '-0.2 -1 3.8', rotation: '0 182 0'},
         { ziel: 'E25', position: '-0.3 -1 -3.8', rotation: '0 2 0'},
-        { ziel: 'r202', position: '-2 1 -4', rotation: '0 90 0'}
-      ]
+        { ziel: 'r202', position: '0.8 -1 -3.2', rotation: '0 30 0'}
+      ],
+      grundrissPosKlein: "-2.25 1.19",
     },
 
     E24_2: {
@@ -724,16 +812,19 @@ let aktuelleEtage = "draussen";
         { ziel: 'E23_2', position: '0.2 -1 -3.8', rotation: '0 -2 0'},
         { ziel: 'E25', position: '0.3 -1 3.8', rotation: '0 -178 0'},
         { ziel: 'r202', position: '-1 -1 3.3', rotation: '0 -155 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.25 1.19",
     },
 
     r202: {
       bild: 'assets/bilder/2etage/202.jpg',
       rotation: "0 173 0",
       etage: '2',
+      beschreibung: "202 Sprachen",
       pfeile: [
         { ziel: 'E24', position: '5.7 -1 1.8', rotation: '0 -89 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.315 1.3",
     },
 
     E25: {
@@ -746,46 +837,41 @@ let aktuelleEtage = "draussen";
         { ziel: 'r201', position: '2.5 -1 0', rotation: '0 -90 0'},
         { ziel: 'r220', position: '-2.4 -1 -3.3', rotation: '0 88.5 0'},
         { ziel: 'r221', position: '0 -1 -5', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.4 1.19",
     },
-    E25_2: {
-      bild: 'assets/bilder/2etage/E25.jpg',
-      rotation: "0 -91.55 0",
-      etage: '2',
-      pfeile: [
-        { ziel: 'E24_2', position: '-0.2 -1 -3.3', rotation: '0 0 0'},
-        { ziel: 'treppchenE2', position: '3.1 -1 -0.4', rotation: '0 -90 0'},
-        { ziel: 'r201', position: '-2.5 -1 0', rotation: '0 90 0'},
-        { ziel: 'r220', position: '2.4 -1 3.3', rotation: '0 -91.5 0'},
-        { ziel: 'r221', position: '0 -1 5', rotation: '0 180 0'}
-      ]
-    },
-
+    
     r201: {
       bild: 'assets/bilder/2etage/201.jpg',
       rotation: "0 -128 0",
       etage: '2',
+      beschreibung: "201 Sprachen/Geschichte",
       pfeile: [
         { ziel: 'E25', position: '3 -1 -4.7', rotation: '0 24 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.49 1.3",
     },
 
     r220: {
       bild: 'assets/bilder/2etage/220.jpg',
       rotation: "0 -15 0",
       etage: '2',
+      beschreibung: "220 Sprachen",
       pfeile: [
-        { ziel: 'E25_2', position: '5.5 -1 0', rotation: '0 -120 0'} 
-      ]
+        { ziel: 'E25', position: '5.5 -1 0', rotation: '0 -120 0'} 
+      ],
+      grundrissPosKlein: "-2.51 1.08",
     },
 
     r221: {
       bild: 'assets/bilder/2etage/221.jpg',
       rotation: "0 -162 0",
       etage: '2',
+      beschreibung: "221 Medien/Vorbereitung",//???
       pfeile: [
         { ziel: 'E25', position: '-0.2 -1 3.7', rotation: '0 180 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-2.54 1.23",
     },
 
     treppchenE2: {
@@ -796,8 +882,11 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppchenE1', position: '1.7 -1 -1.4', rotation: '0 0 0'},
         { ziel: 'treppchenE3_2', position: '-1.6 -1 -0.8', rotation: '0 0 0'}, 
         { ziel: 'E25_2', position: '1.7 -1 1.9', rotation: '0 180 0'}       
-      ]
+      ],
+      grundrissPosKlein: "-2.395 1.045",
     },
+
+
 
     //3. Etage
 
@@ -808,7 +897,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'treppeE2', position: '2.5 -1 -2.5', rotation: '0 0 0'},
         { ziel: 'treppeE3', position: '-2.6 -1 -2.5', rotation: '0 0 0'}       
-      ]
+      ],
+      grundrissPosKlein: "-1.87 1.02"
     },
 
     treppeE3: {
@@ -819,7 +909,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppe23', position: '2.4 -1 -2.5', rotation: '0 0 0'},
         { ziel: 'E31', position: '-5 -1 -0.3', rotation: '0 89 0'},
         { ziel: 'E32', position: '5 -1 -0.4', rotation: '0 -89 0'}        
-      ]
+      ],
+      grundrissPosKlein: "-1.86 1.19",
     },
 
     E31: {
@@ -827,48 +918,57 @@ let aktuelleEtage = "draussen";
       rotation: "0 84 0",
       etage: '3',
       pfeile: [
-        { ziel: 'treppeE3', position: '1 -1 3.8', rotation: '0 180 0'},
+        { ziel: 'treppeE3', position: '0 -1 3.8', rotation: '0 179 0'},
         { ziel: 'r308', position: '2.6 -1 -2.9', rotation: '0 -90 0'},
-        { ziel: 'Aula_2', position: '0.2 -1 -3.8', rotation: '0 0 0'},
+        { ziel: 'Aula_2', position: '0.2 -1 -6', rotation: '0 -1 0'},
         { ziel: 'r306', position: '-2.3 -1 -1.3', rotation: '0 88 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.7 1.19",
     },
 
     Aula_2: {
       bild: 'assets/bilder/3etage/Aula_2.jpg',
       rotation: "0 30 0",
       etage: '3',
+      beschreibung: "Aula",
       pfeile: [
         { ziel: 'E31', position: '8 -1 -2.5', rotation: '0 -89 0'},
         { ziel: 'Aula_1', position: '0.05 -1 3.8', rotation: '0 -182 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.49 1.27",
     },
 
     Aula_1: {
       bild: 'assets/bilder/3etage/Aula_1.jpg',
       rotation: "0 88 0",
       etage: '3',
+      beschreibung: "Aula",
       pfeile: [
         { ziel: 'Aula_2', position: '0.15 -1 -3.8', rotation: '0 0.2 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.49 1.27",
     },
 
     r308: {
       bild: 'assets/bilder/3etage/308.jpg',
       rotation: "0 66 0",
       etage: '3',
+      beschreibung: "308 Mathematik",
       pfeile: [
         { ziel: 'E31', position: '6 -1 3', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.68 1.08",
     },
 
     r306: {
       bild: 'assets/bilder/3etage/306.jpg',
       rotation: "0 119 0",
       etage: '3',
+      beschreibung: "306 Mathematik",
       pfeile: [
         { ziel: 'E31', position: '4.7 -1 -3', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.68 1.3",
     },
 
     E33: {
@@ -880,7 +980,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppeE3', position: '0 -1 3.8', rotation: '0 174 0'},
         { ziel: 'r304', position: '3.5 -1 -4', rotation: '0 -94 0'},        
         { ziel: 'r309', position: '-1.6 -1 -0.9', rotation: '0 84 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.02 1.19",
     },
     E33_2: {
       bild: 'assets/bilder/3etage/E33.jpg',
@@ -891,17 +992,19 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppeE3', position: '-0.3 -1 -3.8', rotation: '0 0 0'},
         { ziel: 'r304', position: '-3 -1 4.5', rotation: '0 90 0'},        
         { ziel: 'r309', position: '1.6 -1 0.9', rotation: '0 -96 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.02 1.19",
     },
-
 
     r304: {
       bild: 'assets/bilder/3etage/304.jpg',
       rotation: "0 83 0",
       etage: '3',
+      beschreibung: "304 Mathematik",
       pfeile: [
         { ziel: 'E33', position: '5 -1 5', rotation: '0 -95 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.03 1.3",
     },
 
     E34: {
@@ -913,7 +1016,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'E33_2', position: '0 -1 3.8', rotation: '0 180 0'},
         { ziel: 'r303', position: '1.5 -1 9', rotation: '0 -203 0'},        
         { ziel: 'r310', position: '-2.4 -1 1.2', rotation: '0 90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.19 1.19",
     },
 
     E34_2: {
@@ -925,25 +1029,41 @@ let aktuelleEtage = "draussen";
         { ziel: 'E33_2', position: '0 -1 -3.8', rotation: '0 0 0'},
         { ziel: 'r303', position: '-1.5 -1 -9', rotation: '0 -23 0'},        
         { ziel: 'r310', position: '2.4 -1 -1.2', rotation: '0 -90 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.19 1.19",
+    },
+
+    r310: {
+      bild: 'assets/bilder/3etage/310.jpg',
+      rotation: "0 27 0",
+      etage: '3',
+      beschreibung: "310 Informatik",
+      pfeile: [
+        { ziel: 'E34', position: '-2.5 -1 -5', rotation: '0 0 0'}
+      ],
+      grundrissPosKlein: "-2.175 1.08",
     },
 
     r303: {
       bild: 'assets/bilder/3etage/303.jpg',
       rotation: "0 -130 0",
       etage: '3',
+      beschreibung: "303 Mathematik",
       pfeile: [
-        { ziel: 'E34', position: '4.2 -1 -4.5', rotation: '0 -90 0'}
-      ]
+        { ziel: 'E34_2', position: '4.2 -1 -4.5', rotation: '0 -90 0'}
+      ],
+      grundrissPosKlein: "-2.2 1.3",
     },
 
     r309: {
       bild: 'assets/bilder/3etage/309.jpg',
       rotation: "0 -170 0",
       etage: '3',
+      beschreibung: "309 Informatik",
       pfeile: [
-        { ziel: 'E34', position: '5.5 -1 -1.3', rotation: '0 -90 0'}
-      ]
+        { ziel: 'E33', position: '5.5 -1 -1.3', rotation: '0 -90 0'}
+      ],
+      grundrissPosKlein: "-2.025 1.08",
     },
 
     E35: {
@@ -953,7 +1073,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E36', position: '-0.3 -1 -3.8', rotation: '0 1 0'},
         { ziel: 'E34_2', position: '0 -1 3.8', rotation: '0 182 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.27 1.19",
     },
     E35_2: {
       bild: 'assets/bilder/3etage/E35.jpg',
@@ -962,7 +1083,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E36', position: '0.3 -1 3.8', rotation: '0 -179 0'},
         { ziel: 'E34_2', position: '0.3 -1 -3.8', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.27 1.19",
     },
 
     E36: {
@@ -973,8 +1095,9 @@ let aktuelleEtage = "draussen";
         { ziel: 'E35_2', position: '2.5 -1 2.2', rotation: '0 -152 0'},
         { ziel: 'treppchenE3', position: '-3 -1 -1.9', rotation: '0 110 0'},
         { ziel: 'r301_1', position: '-0.3 -1 -4.5', rotation: '0 50 0'},        
-        { ziel: 'r315_2', position: '-2.7 -1 -4.2', rotation: '0 61 0'}
-      ]
+        { ziel: 'r315_1', position: '-2.7 -1 -4.2', rotation: '0 61 0'}
+      ],
+      grundrissPosKlein: "-2.35 1.19",
     },
 
     treppchenE3: {
@@ -985,7 +1108,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'E36', position: '-0.2 -1 2.5', rotation: '0 180 0'},
         { ziel: 'treppchenE2', position: '0 -1 -1', rotation: '0 0 0'},
         { ziel: 'r301_1', position: '0.6 -1 7', rotation: '0 180 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.395 1.045",
     },
     treppchenE3_2: {
       bild: 'assets/bilder/3etage/treppchenE3.jpg',
@@ -995,46 +1119,54 @@ let aktuelleEtage = "draussen";
         { ziel: 'E36', position: '0.2 -1 -2.5', rotation: '0 0 0'},
         { ziel: 'treppchenE2', position: '0.1 -1 1', rotation: '0 180 0'},
         { ziel: 'r301_1', position: '-0.5 -1 -7', rotation: '0 -0.5 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.395 1.045",
     },
 
     r301_1: {
       bild: 'assets/bilder/3etage/301_1.jpg',
       rotation: "0 -106 0",
       etage: '3',
+      beschreibung: "301 Humboldtshop",
       pfeile: [
         { ziel: 'E36', position: '0.3 -1 5.5', rotation: '0 181 0'},
         { ziel: 'r301_2', position: '-3.8 -1 -1', rotation: '0 90 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.3",
     },
 
     r301_2: {
       bild: 'assets/bilder/3etage/301_2.jpg',
       rotation: "0 -80 0",
       etage: '3',
+      beschreibung: "301 Humboldtshop",
       pfeile: [
         { ziel: 'r301_1', position: '1.3 -1 3.8', rotation: '0 183 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.3",
     },
 
     r315_2: {
       bild: 'assets/bilder/3etage/315h.jpg',
       rotation: "0 -21 0",
       etage: '3',
+      beschreibung: "315 Computerraum",
       pfeile: [
-        
         { ziel: 'r315_1', position: '1.5 -1 3.8', rotation: '0 180 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.08",
     },
 
     r315_1: {
       bild: 'assets/bilder/3etage/315.jpg',
       rotation: "0 180 0",
       etage: '3',
+      beschreibung: "315 Computerraum",
       pfeile: [
-        { ziel: 'r315_2', position: '0 -1 -3.8', rotation: '0 0 0'},
+      { ziel: 'r315_2', position: '0 -1 -3.8', rotation: '0 0 0'},
       { ziel: 'E36', position: '-1 -1 3.3', rotation: '0 105 0'},
-      ]
+      ],
+      grundrissPosKlein: "-2.51 1.08",
     },
 
     //neubau
@@ -1044,12 +1176,13 @@ let aktuelleEtage = "draussen";
       rotation: "0 -116 0",
       etage: 'neubau1',
       pfeile: [
-        { ziel: 'r12', position: '3 -1 -8', rotation: '0 0 0'},
-        { ziel: 'r13', position: '-2 -1 -8', rotation: '0 0 0'},
+        { ziel: 'r13', position: '3 -1 -8', rotation: '0 0 0'},
+        { ziel: 'r12', position: '-2 -1 -8', rotation: '0 0 0'},
         { ziel: 'r14', position: '5 -1 -2.56', rotation: '0 -88 0'},
         { ziel: 'n12', position: '-3 -1 -6.5', rotation: '0 -24 0'},
         {ziel: 'haupteingang', position: '-3 -1 8', rotation: '0 -160 0'}
-      ]
+      ],
+      grundrissPosKlein: "1 1"
     },
     n11_2: {
       bild: 'assets/bilder/neubau/fluru1.jpg',
@@ -1090,7 +1223,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n12_2', position: '1.3 -1 6', rotation: '0 180 0'},
         { ziel: 'n22', position: '6 -1 -2', rotation: '0 -91 0'},
-        { ziel: 'r21', position: '-1.8 -1 6.2', rotation: '0 -155 0'},
+        { ziel: 'r21_1', position: '-1.8 -1 6.2', rotation: '0 -155 0'},
         { ziel: 'r22', position: '-3 -1 0.7', rotation: '0 92 0'},
         { ziel: 'r23', position: '-1.6 -1 -6.4', rotation: '0 -24 0'},
         { ziel: 'r24', position: '5 -1 -7', rotation: '0 0 0'},
@@ -1104,7 +1237,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n12_2', position: '-1.3 -1 -6', rotation: '0 0 0'},
         { ziel: 'n22', position: '-6 -1 2', rotation: '0 89 0'},
-        { ziel: 'r21', position: '1.8 -1 -6.2', rotation: '0 25 0'},
+        { ziel: 'r21_1', position: '1.8 -1 -6.2', rotation: '0 25 0'},
         { ziel: 'r22', position: '3 -1 -0.7', rotation: '0 -88 0'},
         { ziel: 'r23', position: '1.6 -1 6.4', rotation: '0 156 0'},
         { ziel: 'r24', position: '-5 -1 7', rotation: '0 180 0'},
@@ -1139,8 +1272,9 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/1.2.jpg',
       rotation: "0 -122 0",
       etage: 'neubau1',
+      beschreibung: "1.2 Musik",
       pfeile: [
-        { ziel: 'n12', position: '0.5 -1 7', rotation: '1 -153 0'}
+        { ziel: 'n11', position: '0.5 -1 7', rotation: '1 -153 0'}
       ]
     },
 
@@ -1148,8 +1282,9 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/1.3.jpg',
       rotation: "0 -5 0",
       etage: 'neubau1',
+      beschreibung: "1.3 Sprachen",
       pfeile: [
-        { ziel: 'n12', position: '5.5 -1 -6', rotation: '0 -40 0'}
+        { ziel: 'n11', position: '5.5 -1 -6', rotation: '0 -40 0'}
       ]
     },
 
@@ -1157,6 +1292,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/1.4.jpg',
       rotation: "0 135 0",
       etage: 'neubau1',
+      beschreibung: "1.2 Musik",
       pfeile: [
         { ziel: 'n11', position: '-2 -1 -4', rotation: '0 -25 0'}
       ]
@@ -1166,6 +1302,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.1.1.jpg',
       rotation: "0 94 0",
       etage: 'neubau2',
+      beschreibung: "2.1 Kunst",
       pfeile: [
         { ziel: 'r21_2', position: '-0.45 -2 5', rotation: '0 176 0'},
         { ziel: 'n21_2', position: '8 -1 -3', rotation: '0 -90 0'},
@@ -1176,6 +1313,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.1.2.jpg',
       rotation: "0 33 0",
       etage: 'neubau2',
+      beschreibung: "2.1 Kunst",
       pfeile: [
         { ziel: 'r21_1', position: '0.1 -2 4.2', rotation: '0 176 0'}
       ]
@@ -1185,6 +1323,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 158 0",
       etage: 'neubau2',
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '-3 -1 1.1', rotation: '0 93 0'},
         { ziel: 'r23', position: '3.7 -1 0.9', rotation: '0 -89 0'},
@@ -1195,6 +1334,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 248 0",
       etage: 'neubau2',
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '1.2 -1 2.8', rotation: '0 183 0'},
         { ziel: 'r23', position: '1 -1 -3.5', rotation: '0 1 0'},
@@ -1205,6 +1345,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 64 0",
       etage: 'neubau2',
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '-0.9 -1 -2.8', rotation: '0 -1 0'},
         { ziel: 'r23', position: '-1 -1 3.5', rotation: '0 177 0'},
@@ -1214,12 +1355,12 @@ let aktuelleEtage = "draussen";
 
     r23: {
       bild: 'assets/bilder/neubau/2.3.jpg',
-      rotation: "0 -67 0",
+      rotation: "0 90 0",
       etage: 'neubau2',
+      beschreibung: "2.3 Kunst",
       pfeile: [
-        { ziel: 'n21_2', position: '0 -1 0', rotation: '0 0 0'},
-        { ziel: 'r22_3', position: '0 -1 0', rotation: '0 0 0'},
-        { ziel: 'n21', position: '0 -1 0', rotation: '0 0 0'}
+        { ziel: 'n21', position: '-6.9 -1 -4.3', rotation: '0 93 0'},
+        { ziel: 'r22_3', position: '-5.2 -1 -5', rotation: '0 0 0'}
       ]
     },
 
@@ -1227,6 +1368,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.4.jpg',
       rotation: "0 -88 0",
       etage: 'neubau2',
+      beschreibung: "2.4 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '-6 -1 0.2', rotation: '0 89 0'}
       ]
@@ -1236,6 +1378,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/neubau/2.5.jpg',
       rotation: "0 -128 0",
       etage: 'neubau2',
+      beschreibung: "2.5 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '2.5 -1 6.5', rotation: '0 -150 0'}
       ]
@@ -1356,7 +1499,7 @@ const raumHotspots = {
     { raum: "r011", position: "0.46 -1.31 0.05", size: "0.27 0.31" },
     { raum: "r021", position: "-0.84 -1.31 0.05", size: "0.22 0.31" },
     { raum: "treppeK", position: "0.2 -1.27 0.05", size: "0.22 0.4" },
-    { raum: "treppchenK", position: "-0.65 -1.31 0.05", size: "0.14 0.31" }
+    { raum: "K7", position: "-0.65 -1.31 0.05", size: "0.14 0.31" }
   ],
   neubau1: [
     { raum: "n11", position: "0.1 -1.19 0.05", size: "0.32 0.58" },
@@ -1427,13 +1570,13 @@ function ladeKlickbareZonen(etage) {
   
 
   function ladeRaum(raum) {
-    console.log("Wechsel Raum:", raeume[raum]);
+    console.log("Wechsel Raum:", raum);
     aktuelleEtage = raeume[raum].etage;
 
     //vorherige Pfeile entfernt 
     document.querySelectorAll('.pfeil').forEach((el) => el.remove());
        
-    // Setze die Rotation zuerst
+    //Rotation zuerst
     const camera = document.querySelector('a-camera');
     const sky = document.querySelector('a-sky');
     sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
@@ -1448,15 +1591,15 @@ function ladeKlickbareZonen(etage) {
     sky.setAttribute('src', raeume[raum].bild);
     console.log("Bild geladen:", raeume[raum].bild);
 
-    // Aktualisiere den Grundriss
+    //Aktualisiere den Grundriss
     if (raeume[raum].etage) {
       ladeGrundriss(raeume[raum].etage);
     }
         
       
-    // Neue Pfeile hinzufügen
+    //Neue Pfeile hinzufügen
     raeume[raum].pfeile.forEach((pfeil) => {
-      // Pfeil (Dreieck) 
+      //Pfeil (Dreieck) 
       const pfeilEl = document.createElement('a-entity');
       pfeilEl.setAttribute('geometry', 'primitive: triangle; vertexA: 0 -0.1 0; vertexB: -0.5 0 1; vertexC: 0.5 0 1');
       pfeilEl.setAttribute('material', 'color: white');
@@ -1468,26 +1611,39 @@ function ladeKlickbareZonen(etage) {
       //Interaktive Pfeile
       pfeilEl.setAttribute("cursor-listener", ""); 
 
-      // Elemente zur Szene hinzufügen
+      //Elemente zur Szene
       const scene = document.querySelector('a-scene');
       scene.appendChild(pfeilEl);
     });
 
-    // Roter Punkt aktualisieren
+    //Text an Kamera
+    aktualisiereRaumText(raum);
+
+    //Roter Punkt
     updatePunktPositions(raum);
   
   }
 
-  // Hilfsfunktion zum Bewegen des Punktes
+  function aktualisiereRaumText(raum) {
+    const textElement = document.getElementById("raum-text");
+    const container = document.getElementById("raum-text-container");
+
+    if (raeume[raum] && raeume[raum].beschreibung) {
+        textElement.textContent = raeume[raum].beschreibung;
+        container.style.display = "block";
+    } else {
+        container.style.display = "none"; 
+    }
+}
+
+  //Bewegen des Punktes
 function bewegePunkt(punktId, position) {
   let punkt = document.querySelector(punktId);
   if (punkt && position) {
       let [x, y] = position.split(" ").map(Number);
-      // Z-Wert beibehalten, indem aktuelle Position holen
+      //Z-Wert beibehalten, indem aktuelle Position holen
       let aktuellePosition = punkt.getAttribute("position"); 
       let z = aktuellePosition.z; 
-
-      // Setze die neue Position
       punkt.setAttribute("position", { x: x, y: y, z: z }); 
     }
 }
@@ -1498,9 +1654,8 @@ function updatePunktPositions(raum) {
       console.error("Raum nicht gefunden:", raum);
       return;
   }
-  // Aktualisiere Punkt im kleinen/großen Grundriss
   bewegePunkt("#punktKlein", rDaten.grundrissPosKlein);
-  bewegePunkt("#punktGross", rDaten.grundrissPosGross);
+  //bewegePunkt("#punktGross", rDaten.grundrissPosGross); -> aktivieren falls gewünscht
 }
 
   

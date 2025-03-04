@@ -1,3 +1,49 @@
 *.jpg
 .png
 *.jpeg
+
+
+
+Vertretungsplan Code - Fehlerhaft Speicherort:
+
+      <!-- <img src="assets/bilder/DSB-icon.PNG" id="DSB-icon" onclick="anzeigenDSB()" alt="DSB">
+      <div id="iframe-container">
+        <iframe src="https://www.dsbmobile.de" width="100%" height="100%"></iframe>
+    </div> -->
+
+    #iframe-container { /*noch Fehlerhaft*/
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            z-index: 9;
+        }
+
+ function anzeigenDSB() {
+ var Box = document.getElementById("iframe-container");
+ var sichtbar = Box.style.display === "block";
+ Box.style.display = sichtbar ? "none" : "block";
+}
+
+
+mehr was man vlt später noch braucht
+//vorherige Schriftzüge entfernen
+    document.querySelectorAll('.raum-text').forEach(el => el.remove());
+
+    if (raeume[raum] && raeume[raum].text) {
+      const textEl = document.createElement('a-text');
+      textEl.setAttribute('value', raeume[raum].text);
+      textEl.setAttribute('position', raeume[raum].textPosition);
+      textEl.setAttribute('color', 'white'); 
+      textEl.setAttribute('align', 'center');
+      textEl.setAttribute('width', '3'); 
+      //textEl.setAttribute('look-at', '[camera]'); // Damit der Text zur Kamera schaut
+      textEl.classList.add('raum-text');
+
+        //Text zur Szene 
+        document.querySelector('a-camera').appendChild(textEl);
+    }
