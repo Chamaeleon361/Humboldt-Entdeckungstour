@@ -36,7 +36,7 @@ function anzeigenHilfe() {
 }
 
 let aktuelleEtage = "draussen";
-  
+ 
   //Raumdatenbank
   
   const  
@@ -765,7 +765,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E24', position: '0.3 -1 -3.8', rotation: '0 0 0'},
         { ziel: 'E22_2', position: '-0.2 -1 3.8', rotation: '0 175 0'},
-        { ziel: 'r203', position: '2 -1 -4.5', rotation: '0 23 0'}
+        { ziel: 'r203', position: '2 -1 -4.5', rotation: '0 23 0'},
+        { ziel: 'lehrerzimmer', position: '-2.5 -2 -1.8', rotation: '0 90 0'}
       ],
       grundrissPosKlein: "-2.1 1.19",
     },
@@ -776,9 +777,19 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'E24', position: '0.1 -1 3.8', rotation: '0 183 0'},
         { ziel: 'E22_2', position: '-0.2 -1 -3.8', rotation: '0 0 0'},
-        { ziel: 'r203', position: '-1.5 -1 4.5', rotation: '0 -155 0'}
+        { ziel: 'r203', position: '-1.5 -1 4.5', rotation: '0 -155 0'},
+        { ziel: 'lehrerzimmer', position: '-2.5 -2 -1.8', rotation: '0 90 0'}
       ],
       grundrissPosKlein: "-2.1 1.19",
+    },
+
+    lehrerzimmer: {
+      bild: 'assets/bilder/2etage/lehrerzimmer_normal.jpeg',
+      rotation: "0 0 0",
+      etage: '2',
+      pfeile:[
+        {ziel: "E23", position: '-4 -2 3.5', rotation: '0 -100 0'}
+      ]
     },
 
     r203: {
@@ -1386,6 +1397,58 @@ let aktuelleEtage = "draussen";
   
   };
 
+  let aktuellesBild = 0;
+  const bilder = [
+    "assets/bilder/2etage/lehrerzimmer_normal.jpeg",
+    "assets/bilder/2etage/lehrerzimmer_grusel.png"
+  ];
+
+  let bildWechselTimer; 
+
+function betreteLehrerzimmer() {
+  aktuellesBild = Math.random() < 0.5 ? 0 : 1;
+
+  const sky = document.querySelector("a-sky");
+  sky.setAttribute("src", bilder[aktuellesBild]);
+
+  //Sound
+  const audio = new Audio("assets/sounds/jumpscare.mp3");
+  audio.play();
+
+  starteBildwechsel();
+}
+
+//zufälligen Bildwechsel
+function starteBildwechsel() { 
+  
+  // weißer Bildschirm 
+  const blitz = document.createElement("div");
+  blitz.style.position = "fixed";
+  blitz.style.top = "0";
+  blitz.style.left = "0";
+  blitz.style.width = "100vw";
+  blitz.style.height = "100vh";
+  blitz.style.background = "white";
+  blitz.style.zIndex = "9999";
+  document.body.appendChild(blitz);
+  
+  setTimeout(() => {
+      document.body.removeChild(blitz);
+  }, 150); 
+
+  if (bildWechselTimer) clearTimeout(bildWechselTimer);
+
+  let zufallsZeit = Math.random() * (1000 - 300) + 300; //zwischen 1s & 300ms
+
+  bildWechselTimer = setTimeout(() => {
+      aktuellesBild = 1 - aktuellesBild;
+      document.querySelector("a-sky").setAttribute("src", bilder[aktuellesBild]);
+      starteBildwechsel();
+  }, zufallsZeit);
+}
+
+
+
 //Etagen zu den entsprechenden Grundrissbildern
     const Grundriss = {
       'draussen': 'assets/bilder/grundrissdraussen.png',
@@ -1516,7 +1579,6 @@ const raumHotspots = {
     { raum: "r25", position: "-0.36 -1.19 0.05", size: "0.32 0.35" },
     { raum: "n21", position: "0.01 -1.12 0.05", size: "0.34 0.51" },
     { raum: "n21", position: "-0.32 -0.94 0.05", size: "0.35 0.15" },
-    //{ raum: "n23/treppedr", position: "0.01 -1.45 0.05", size: "0.34 0.15" } falls wir schaffen draußen treppe
   ]
 };
 
@@ -1568,62 +1630,6 @@ function ladeKlickbareZonen(etage) {
     }
   }
   
-
-  function ladeRaum(raum) {
-    console.log("Wechsel Raum:", raum);
-    aktuelleEtage = raeume[raum].etage;
-
-    //vorherige Pfeile entfernt 
-    document.querySelectorAll('.pfeil').forEach((el) => el.remove());
-       
-    //Rotation zuerst
-    const camera = document.querySelector('a-camera');
-    const sky = document.querySelector('a-sky');
-    sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
-
-    camera.removeAttribute('look-controls');    //lookcontrol aus, damit Rotation nicht überschrieben wird
-    camera.setAttribute('rotation', raeume[raum].rotation);  
-     setTimeout(() => {
-      camera.setAttribute('look-controls', 'enabled: true');
-    }, 50);
-
-
-    sky.setAttribute('src', raeume[raum].bild);
-    console.log("Bild geladen:", raeume[raum].bild);
-
-    //Aktualisiere den Grundriss
-    if (raeume[raum].etage) {
-      ladeGrundriss(raeume[raum].etage);
-    }
-        
-      
-    //Neue Pfeile hinzufügen
-    raeume[raum].pfeile.forEach((pfeil) => {
-      //Pfeil (Dreieck) 
-      const pfeilEl = document.createElement('a-entity');
-      pfeilEl.setAttribute('geometry', 'primitive: triangle; vertexA: 0 -0.1 0; vertexB: -0.5 0 1; vertexC: 0.5 0 1');
-      pfeilEl.setAttribute('material', 'color: white');
-      pfeilEl.setAttribute('position', pfeil.position); 
-      pfeilEl.setAttribute('rotation', pfeil.rotation);
-      pfeilEl.setAttribute("data-ziel", pfeil.ziel);
-      pfeilEl.setAttribute("class", "pfeil"); 
-
-      //Interaktive Pfeile
-      pfeilEl.setAttribute("cursor-listener", ""); 
-
-      //Elemente zur Szene
-      const scene = document.querySelector('a-scene');
-      scene.appendChild(pfeilEl);
-    });
-
-    //Text an Kamera
-    aktualisiereRaumText(raum);
-
-    //Roter Punkt
-    updatePunktPositions(raum);
-  
-  }
-
   function aktualisiereRaumText(raum) {
     const textElement = document.getElementById("raum-text");
     const container = document.getElementById("raum-text-container");
@@ -1658,6 +1664,70 @@ function updatePunktPositions(raum) {
   //bewegePunkt("#punktGross", rDaten.grundrissPosGross); -> aktivieren falls gewünscht
 }
 
+  function ladeRaum(raum) {
+    console.log("Wechsel Raum:", raum);
+    aktuelleEtage = raeume[raum].etage;
+
+    //vorherige Pfeile entfernt 
+    document.querySelectorAll('.pfeil').forEach((el) => el.remove());
+       
+    //Rotation zuerst
+    const camera = document.querySelector('a-camera');
+    const sky = document.querySelector('a-sky');
+    sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
+
+    camera.removeAttribute('look-controls');    //lookcontrol aus, damit Rotation nicht überschrieben wird
+    camera.setAttribute('rotation', raeume[raum].rotation);  
+     setTimeout(() => {
+      camera.setAttribute('look-controls', 'enabled: true');
+    }, 50);
+
+    //falls vorher Timer lief, stoppen
+    if (bildWechselTimer) {
+        clearInterval(bildWechselTimer);
+        bildWechselTimer = null;
+    }
+
+    sky.setAttribute('src', raeume[raum].bild);
+    console.log("Bild geladen:", raeume[raum].bild);
+
+    //Aktualisiere den Grundriss
+    if (raeume[raum].etage) {
+      ladeGrundriss(raeume[raum].etage);
+    }
+        
+      
+    //Neue Pfeile hinzufügen
+    raeume[raum].pfeile.forEach((pfeil) => {
+      //Pfeil (Dreieck) 
+      const pfeilEl = document.createElement('a-entity');
+      pfeilEl.setAttribute('geometry', 'primitive: triangle; vertexA: 0 -0.1 0; vertexB: -0.5 0 1; vertexC: 0.5 0 1');
+      pfeilEl.setAttribute('material', 'color: white');
+      pfeilEl.setAttribute('position', pfeil.position); 
+      pfeilEl.setAttribute('rotation', pfeil.rotation);
+      pfeilEl.setAttribute("data-ziel", pfeil.ziel);
+      pfeilEl.setAttribute("class", "pfeil"); 
+
+      //Interaktive Pfeile
+      pfeilEl.setAttribute("cursor-listener", ""); 
+
+      //Elemente zur Szene
+      const scene = document.querySelector('a-scene');
+      scene.appendChild(pfeilEl);
+    });
+
+    if (raum === "lehrerzimmer") {
+      betreteLehrerzimmer();
+      console.log("lehrerzimmer betreten");
+  }
+
+    //Text an Kamera
+    aktualisiereRaumText(raum);
+
+    //Roter Punkt
+    updatePunktPositions(raum);
+  
+  }
   
   // Startraum laden
   ladeRaum('haupteingang');
