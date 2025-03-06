@@ -96,10 +96,10 @@ body {background-image: url('bilder/hintergrund1.jpg'); background-size: cover; 
 }
 
 #vorschlaege {
-    background: #eee;
+    background: #eeeeee98;
     position: absolute;
-    width: 200px;
-    margin-top: 5px;
+    width: 100px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -109,5 +109,5 @@ body {background-image: url('bilder/hintergrund1.jpg'); background-size: cover; 
 }
 
 #vorschlaege div:hover {
-    background: #ddd;
+    background: #dddddd46;
 } 

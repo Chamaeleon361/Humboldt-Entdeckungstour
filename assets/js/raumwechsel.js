@@ -1,5 +1,4 @@
- 
- document.getElementById("passwort-eingabe").addEventListener("keypress", function(event) {
+document.getElementById("passwort-eingabe").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
       pruefePasswort();
   }
@@ -27,6 +26,7 @@ function pruefePasswort() {
         });
     }
 });
+
 
 
 function anzeigenHilfe() {
@@ -436,7 +436,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/1etage/109.jpg',
       rotation: "0 22 0",
       etage: '1',
-      beschreibung: "109 Sozialarbeiter",
+      beschreibung: "109 Sozialarbeiterraum",
       pfeile: [
         { ziel: 'E11', position: '-1 -1 3', rotation: '0 180 0'} 
       ],
@@ -634,7 +634,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/207.jpg',
       rotation: "0 65 0",
       etage: '2',
-      beschreibung: "207 Biologie",
+      beschreibung: "207 Biologie/Chemie",
       pfeile: [
         { ziel: 'E21_2', position: '4 -1 -5.5', rotation: '0 17 0'} 
       ],
@@ -704,7 +704,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/204.jpg',
       rotation: "0 -36 0",
       etage: '2',
-      beschreibung: "204 Sprachen",
+      beschreibung: "204 Seketariat",
       pfeile: [
         { ziel: 'E22_2', position: '-0.2 -1 1.5', rotation: '0 180 0'} 
       ],
@@ -726,7 +726,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/213.jpg',
       rotation: "0 -118 0",
       etage: '2',
-      beschreibung: "213 Sanitäterraum",
+      beschreibung: "213 Krankenzimmer",
       pfeile: [
         { ziel: 'E22', position: '0 -1 2.3', rotation: '0 180 0'} 
       ]
@@ -878,7 +878,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/221.jpg',
       rotation: "0 -162 0",
       etage: '2',
-      beschreibung: "221 Medien/Vorbereitung",//???
+      beschreibung: "221 Vorbereitungsraum",
       pfeile: [
         { ziel: 'E25', position: '-0.2 -1 3.7', rotation: '0 180 0'} 
       ],
@@ -919,7 +919,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'treppe23', position: '2.4 -1 -2.5', rotation: '0 0 0'},
         { ziel: 'E31', position: '-5 -1 -0.3', rotation: '0 89 0'},
-        { ziel: 'E32', position: '5 -1 -0.4', rotation: '0 -89 0'}        
+        { ziel: 'E33', position: '5 -1 -0.4', rotation: '0 -89 0'}        
       ],
       grundrissPosKlein: "-1.86 1.19",
     },
@@ -964,7 +964,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/3etage/308.jpg',
       rotation: "0 66 0",
       etage: '3',
-      beschreibung: "308 Mathematik",
+      beschreibung: "308 Mathematik/WAT",
       pfeile: [
         { ziel: 'E31', position: '6 -1 3', rotation: '0 -90 0'}
       ],
@@ -1193,7 +1193,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'n12', position: '-3 -1 -6.5', rotation: '0 -24 0'},
         {ziel: 'haupteingang', position: '-3 -1 8', rotation: '0 -160 0'}
       ],
-      grundrissPosKlein: "1 1"
+      grundrissPosKlein: "-1.935 1.03",
     },
     n11_2: {
       bild: 'assets/bilder/neubau/fluru1.jpg',
@@ -1205,7 +1205,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r14', position: '-5 -1 2.56', rotation: '0 92 0'},
         { ziel: 'n12', position: '3 -1 6.5', rotation: '0 156 0'},
         {ziel: 'haupteingang', position: '3 -1 -8', rotation: '0 20 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.935 1.03",
     },
 
     n12: {
@@ -1215,7 +1216,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '1.23 -1 -5.5', rotation: '0 0 0'},
         { ziel: 'n11_2', position: '-1.2 -1 4', rotation: '0 183 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.08 1.19",
     },
     n12_2: {
       bild: 'assets/bilder/neubau/fluru2.jpg',
@@ -1224,7 +1226,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '-1.23 -1 5.5', rotation: '0 180 0'},
         { ziel: 'n11_2', position: '1.2 -1 -4', rotation: '0 3 0'}
-      ]
+      ],      
+      grundrissPosKlein: "-2.08 1.19",
     },
 
     n21: {
@@ -1239,7 +1242,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r23', position: '-1.6 -1 -6.4', rotation: '0 -24 0'},
         { ziel: 'r24', position: '5 -1 -7', rotation: '0 0 0'},
         { ziel: 'r25', position: '6.9 -1 0.5', rotation: '0 -64 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.08 1.2345",
     },
     n21_2: {
       bild: 'assets/bilder/neubau/fluro1.jpg',
@@ -1253,7 +1257,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r23', position: '1.6 -1 6.4', rotation: '0 156 0'},
         { ziel: 'r24', position: '-5 -1 7', rotation: '0 180 0'},
         { ziel: 'r25', position: '-6.9 -1 -0.5', rotation: '0 116 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.08 1.2345",
     },
     
     n22: {
@@ -1265,7 +1270,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r25', position: '2.2 -1 5.5', rotation: '0 155 0'},
         { ziel: 'r24', position: '-3 -1 6.5', rotation: '0 -155 0'},
         { ziel: 'haupteingang', position: '1.5 -1 -6.5', rotation: '0 0 0'} 
-      ]
+      ],
+      grundrissPosKlein: "-1.99 1.11",
     },
     n22_2: {
       bild: 'assets/bilder/neubau/fluro2.jpg',
@@ -1276,7 +1282,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r25', position: '-2.2 -1 -5.5', rotation: '0 -25 0'},
         { ziel: 'r24', position: '3 -1 -6.5', rotation: '0 25 0'},
         { ziel: 'haupteingang', position: '-1.5 -1 6.5', rotation: '0 180 0'},  
-      ]
+      ],
+      grundrissPosKlein: "-1.99 1.11",
     },
 
     r12: {
@@ -1286,17 +1293,19 @@ let aktuelleEtage = "draussen";
       beschreibung: "1.2 Musik",
       pfeile: [
         { ziel: 'n11', position: '0.5 -1 7', rotation: '1 -153 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.13 1.29",
     },
 
     r13: {
       bild: 'assets/bilder/neubau/1.3.jpg',
       rotation: "0 -5 0",
       etage: 'neubau1',
-      beschreibung: "1.3 Sprachen",
+      beschreibung: "1.3 Deutsch/Geschichte",
       pfeile: [
         { ziel: 'n11', position: '5.5 -1 -6', rotation: '0 -40 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.79 1.29",
     },
 
     r14: {
@@ -1306,7 +1315,8 @@ let aktuelleEtage = "draussen";
       beschreibung: "1.2 Musik",
       pfeile: [
         { ziel: 'n11', position: '-2 -1 -4', rotation: '0 -25 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.717 1.15",
     },
 
     r21_1: {
@@ -1318,7 +1328,8 @@ let aktuelleEtage = "draussen";
         { ziel: 'r21_2', position: '-0.45 -2 5', rotation: '0 176 0'},
         { ziel: 'n21_2', position: '8 -1 -3', rotation: '0 -90 0'},
         { ziel: 'r22_2', position: '5 -1 -4.5', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.178 1.31",
     },
     r21_2: {
       bild: 'assets/bilder/neubau/2.1.2.jpg',
@@ -1327,41 +1338,45 @@ let aktuelleEtage = "draussen";
       beschreibung: "2.1 Kunst",
       pfeile: [
         { ziel: 'r21_1', position: '0.1 -2 4.2', rotation: '0 176 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.178 1.31",
     },
 
     r22: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 158 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitung",
+      beschreibung: "2.2 Vorbereitungsraum",
       pfeile: [
         { ziel: 'r21_1', position: '-3 -1 1.1', rotation: '0 93 0'},
         { ziel: 'r23', position: '3.7 -1 0.9', rotation: '0 -89 0'},
         { ziel: 'n21_2', position: '-0.7 -1 3.4', rotation: '0 184 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2 1.31",
     },
     r22_2: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 248 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitung",
+      beschreibung: "2.2 Vorbereitungsraum",
       pfeile: [
         { ziel: 'r21_1', position: '1.2 -1 2.8', rotation: '0 183 0'},
         { ziel: 'r23', position: '1 -1 -3.5', rotation: '0 1 0'},
         { ziel: 'n21_2', position: '3.2 -1 0.7', rotation: '0 275 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2 1.31",
     },
     r22_3: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 64 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitung",
+      beschreibung: "2.2 Vorbereitungsraum",
       pfeile: [
         { ziel: 'r21_1', position: '-0.9 -1 -2.8', rotation: '0 -1 0'},
         { ziel: 'r23', position: '-1 -1 3.5', rotation: '0 177 0'},
         { ziel: 'n21_2', position: '-3.2 -1 -0.7', rotation: '0 91 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2 1.31",
     },
 
     r23: {
@@ -1372,7 +1387,8 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '-6.9 -1 -4.3', rotation: '0 93 0'},
         { ziel: 'r22_3', position: '-5.2 -1 -5', rotation: '0 0 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.83 1.31",
     },
 
     r24: {
@@ -1382,7 +1398,8 @@ let aktuelleEtage = "draussen";
       beschreibung: "2.4 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '-6 -1 0.2', rotation: '0 89 0'}
-      ]
+      ],
+      grundrissPosKlein: "-1.79 1.19"
     },
 
     r25: {
@@ -1392,11 +1409,13 @@ let aktuelleEtage = "draussen";
       beschreibung: "2.5 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '2.5 -1 6.5', rotation: '0 -150 0'}
-      ]
+      ],
+      grundrissPosKlein: "-2.2 1.15",
     }
   
   };
 
+  //spooky Lehrerzimmer
   let aktuellesBild = 0;
   const bilder = [
     "assets/bilder/2etage/lehrerzimmer_normal.jpeg",
@@ -1411,7 +1430,7 @@ function betreteLehrerzimmer() {
   const sky = document.querySelector("a-sky");
   sky.setAttribute("src", bilder[aktuellesBild]);
 
-  //Sound
+  //Sound Lehrerzimmer
   const audio = new Audio("assets/sounds/jumpscare.mp3");
   audio.play();
 
@@ -1473,7 +1492,7 @@ function schliesseGrundriss() {
   container.setAttribute("visible", false);
   document.querySelector("#punktGross").setAttribute("visible", false);
 
-  // Hotspot-Container entfernen (sofern vorhanden)
+  //Hotspot-Container entfernen
   let hotspotContainer = document.getElementById("hotspot-container");
   if (hotspotContainer) {
     hotspotContainer.parentNode.removeChild(hotspotContainer);
@@ -1642,7 +1661,7 @@ function ladeKlickbareZonen(etage) {
     }
 }
 
-  //Bewegen des Punktes
+  //Bewegen des roten Punktes
 function bewegePunkt(punktId, position) {
   let punkt = document.querySelector(punktId);
   if (punkt && position) {
@@ -1665,8 +1684,11 @@ function updatePunktPositions(raum) {
 }
 
   function ladeRaum(raum) {
+
+    const rDaten = raeume[raum];
+
     console.log("Wechsel Raum:", raum);
-    aktuelleEtage = raeume[raum].etage;
+    aktuelleEtage = rDaten.etage;
 
     //vorherige Pfeile entfernt 
     document.querySelectorAll('.pfeil').forEach((el) => el.remove());
@@ -1674,31 +1696,31 @@ function updatePunktPositions(raum) {
     //Rotation zuerst
     const camera = document.querySelector('a-camera');
     const sky = document.querySelector('a-sky');
-    sky.setAttribute('rotation', raeume[raum].rotation || "0 0 0");
+    sky.setAttribute('rotation', rDaten.rotation || "0 0 0");
 
     camera.removeAttribute('look-controls');    //lookcontrol aus, damit Rotation nicht überschrieben wird
-    camera.setAttribute('rotation', raeume[raum].rotation);  
+    camera.setAttribute('rotation', rDaten.rotation);  
      setTimeout(() => {
       camera.setAttribute('look-controls', 'enabled: true');
     }, 50);
 
-    // //falls vorher Timer lief, stoppen
-    // if (bildWechselTimer) {
-    //     clearInterval(bildWechselTimer);
-    //     bildWechselTimer = null;
-    // }
+    //falls vorher Timer lief, stoppen
+    if (bildWechselTimer) {
+        clearInterval(bildWechselTimer);
+        bildWechselTimer = null;
+    }
 
-    sky.setAttribute('src', raeume[raum].bild);
-    console.log("Bild geladen:", raeume[raum].bild);
+    sky.setAttribute('src', rDaten.bild);
+    console.log("Bild geladen:", rDaten.bild);
 
     //Aktualisiere den Grundriss
-    if (raeume[raum].etage) {
-      ladeGrundriss(raeume[raum].etage);
+    if (rDaten.etage) {
+      ladeGrundriss(rDaten.etage);
     }
         
       
     //Neue Pfeile hinzufügen
-    raeume[raum].pfeile.forEach((pfeil) => {
+    rDaten.pfeile.forEach((pfeil) => {
       //Pfeil (Dreieck) 
       const pfeilEl = document.createElement('a-entity');
       pfeilEl.setAttribute('geometry', 'primitive: triangle; vertexA: 0 -0.1 0; vertexB: -0.5 0 1; vertexC: 0.5 0 1');
@@ -1719,7 +1741,12 @@ function updatePunktPositions(raum) {
     if (raum === "lehrerzimmer") {
       betreteLehrerzimmer();
       console.log("lehrerzimmer betreten");
-  }
+    }
+    // if (rDaten.virusFeature && rDaten.virusFeature.enabled) {
+    // ladeVirusFeature(rDaten.virusFeature);
+    // } else {
+    // entferneVirusFeature();
+    // }
 
     //Text an Kamera
     aktualisiereRaumText(raum);
@@ -1731,4 +1758,7 @@ function updatePunktPositions(raum) {
   
   // Startraum laden
   ladeRaum('haupteingang');
+
+
+  
   

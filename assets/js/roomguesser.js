@@ -149,7 +149,7 @@ r213: {
  
 },
 
-lehrerzimmer: {
+r215: {
   bild: 'assets/bilder/2etage/lehrerzimmer_normal.jpeg',
   rotation: "0 0 0",
   
@@ -311,15 +311,14 @@ r25: {
 }
 
 let spielModusAktiv = false;
+let spielGestartet = false;
 let aktuellerRaum = "";
-let wrongCount = 0;
-let normalBild = null;
-let normalRotation = null;
-let noramlRaum = "";
+let fehlerCount = 0;
+let errateneRaeume = new Set();
 
-const raeumeKeys = Object.keys(raeumeDatenbank).filter(r => r.startsWith("r"));
+const raeumeKeys = Object.keys(raeumeDatenbank)
 
-// Anzeige des Spielcontainers beim Laden der Seite ausblenden
+//beim Laden der Seite ausblenden
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("spiel-container").style.display = "none";
 });
@@ -335,26 +334,50 @@ if (!spielModusAktiv) {
   }
   else {
     document.getElementById("eingabe").value = "";
-  document.getElementById("auswertung").innerText = "";
-  
-  document.getElementById("absendenBtn").disabled = false;
- wrongCount = 0; 
+    document.getElementById("eingabe").disabled = true;
+    document.getElementById("auswertung").innerText = "";
+    document.getElementById("absendenBtn").disabled = true;
+    fehlerCount = 0; 
 
 }
 }
+
+
+function waehleRaum() {
+  // Alle Räume, die noch nicht erraten wurden
+  let raeumeZumWaehlen = raeumeKeys.filter(key => !errateneRaeume.has(key));
+
+  // Wenn alle Räume erraten wurden, starte von vorne (oder gehe in den Reset-Status)
+  if (raeumeZumWaehlen.length === 0) {
+      errateneRaeume.clear();  
+      raeumeZumWaehlen = raeumeKeys;
+  }
+
+  // Einen zufälligen Raum aus den noch verfügbaren auswählen
+  const zufaelligerRaum = raeumeZumWaehlen[Math.floor(Math.random() * raeumeZumWaehlen.length)];
+  return zufaelligerRaum;
+}
+
+function raumErraten(raum) {
+  errateneRaeume.add(raum);
+}
+
+
+
 
 function starteSpiel() {
-    if (!normalBild) {
-        normalBild = document.getElementById("sky").getAttribute("src");
-        normalRotation = document.getElementById("sky").getAttribute("rotation");
-      }
-  aktuellerRaum = raeumeKeys[Math.floor(Math.random() * raeumeKeys.length)];
+
+  aktuellerRaum = waehleRaum();
   document.getElementById("eingabe").value = "";
+  document.getElementById("eingabe").disabled = false;
   document.getElementById("auswertung").innerText = "";
   document.getElementById("vorschlaege").innerHTML = "";  
   document.getElementById("absendenBtn").disabled = false;
+
+  fehlerCount = 0;
+  spielGestartet = true;
   
-  entfernePfeile();
+  entferneElemente();
   ladeSpielRaum(aktuellerRaum);
 }
 
@@ -365,44 +388,46 @@ function ladeSpielRaum(raum) {
   const sky = document.getElementById("sky");
   sky.setAttribute("src", raumDaten.bild);
   sky.setAttribute("rotation", raumDaten.rotation);
-
-  // Optional: Hier könnt ihr weitere Anpassungen vornehmen (z. B. Sound, etc.)\n 
   
 }
 
-function entfernePfeile() {
+function entferneElemente() {
     document.querySelectorAll(".pfeil").forEach(p => {p.setAttribute("visible",false)});
     document.querySelector("#punktKlein").setAttribute("visible",false);
     document.querySelector("#Grundriss").setAttribute("visible",false);
+    document.querySelector("#raum-text").setAttribute("visible",true);
 }
   
 function pruefeAntwort() {
   let eingabe = document.getElementById("eingabe").value.toLowerCase().trim();
-  
-  document.getElementById("vorschlaege").innerHTML = "";
-  // Wenn der eingegebene Wert nicht mit 'r' beginnt, wird er ergänzt:
+
   if (!eingabe.startsWith("r")) {
       eingabe = "r" + eingabe;
   }
+
   if (eingabe === aktuellerRaum) {
-    document.getElementById("auswertung").innerText = "Richtig! 🎉";
-    // Deaktiviere den Absenden-Button, damit keine weiteren Versuche möglich sind
-    
-   document.getElementById("absendenBtn").disabled = true;
+    document.getElementById("auswertung").innerText = "Richtig! 🎉";    
+    document.getElementById("absendenBtn").disabled = true;
+    document.getElementById("eingabe").disabled = true;  
+    spielGestartet = false;
+    raumErraten(aktuellerRaum);
+
   } else {
-    wrongCount++;
-    if (wrongCount < 3) {
+    fehlerCount++;
+    if (fehlerCount < 3) {
       document.getElementById("auswertung").innerText = "Falsch!";
     } else {
       document.getElementById("auswertung").innerText = `Falsch! Die richtige Antwort ist: ${aktuellerRaum}`;
+      spielGestartet = false;
+      document.getElementById("eingabe").disabled = true; 
+      document.getElementById("absendenBtn").disabled = true;
     }
   }
   document.getElementById("eingabe").value = "";
-  // Intelligente Suche ausblenden
   document.getElementById("vorschlaege").innerHTML = "";
 }
 
-// Event-Listener für Enter-Taste
+//Enter-Taste
 document.getElementById("eingabe").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         pruefeAntwort();
@@ -416,7 +441,10 @@ function filterVorschlaege() {
       input = "r" + input;
   }
   const vorschlaege = raeumeKeys.filter(r => r.includes(input)).slice(0, 5);
-  document.getElementById("vorschlaege").innerHTML = vorschlaege.map(r => `<div onclick='setzeEingabe("${r}")'>${r}</div>`).join("");
+  document.getElementById("vorschlaege").innerHTML = vorschlaege.map(r => {
+    let nummerOhneR = r.replace(/^r/, "");
+    return `<div onclick='setzeEingabe("${r}")'>${nummerOhneR}</div>`;//noch ändern sodass r nicht mit gesetzt wird
+}).join("");
 }
 
 function setzeEingabe(raum) {
@@ -425,13 +453,11 @@ function setzeEingabe(raum) {
 }
 
 function verlasseSpielmodus() {
-    // Stelle das normale Bild wieder her
-    
-  
     document.querySelectorAll(".pfeil").forEach(p => {p.setAttribute("visible",true)});
     
     document.querySelector("#punktKlein").setAttribute("visible",true);
     document.querySelector("#Grundriss").setAttribute("visible",true);
+    document.querySelector("#raum-text").setAttribute("visible",true);
 
     document.getElementById("vorschlaege").innerHTML = "";
     document.getElementById("auswertung").innerHTML = "";

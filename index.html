@@ -24,8 +24,9 @@
   <div id="geschuetzter-inhalt">
 
     <a-scene>
-
+      
       <a-sky id="sky" src="assets/bilder/haupteingang.jpg"></a-sky>
+
       <a-camera position="0 1.6 0" wasd-controls="enabled: false" cursor="rayOrigin: mouse" look-controls="enabled: true">
       
         <div id="raum-text-container">
@@ -59,10 +60,11 @@
        <!-- GeoGuessr-Container   -->
       <div id="spiel-container">
           <h2>RoomGuesser Schul-Edition</h2>
-          <p>Finde heraus, in welchem Raum du dich befindest!</p>          
-          <p>Drücke Start, um eine Runde zu beginnen</p>
-          <p>Erate den Raum und gib seine Nummer in das Eingabefeld ein</p>
-          <p>Hinweis: Altbau 3 Ziffern, Neubau 2 Ziffern</p> 
+          <p class="links">Finde heraus, in welchem Raum du dich befindest!</p>          
+          <p class="links">Drücke Start, um eine Runde zu beginnen</p>
+          <p class="links">Errate den Raum und gib seine Nummer in das Eingabefeld ein</p>
+          <p class="links">Hinweis: Altbau 3 Ziffern, Neubau 2 Ziffern</p> 
+          <p class="links">Nach 3 falschen Eingaben wird die Nummer aufgelöst </p> 
           <button onclick="starteSpiel()">Start</button>
           <input id="eingabe" type="text" placeholder="Raum eingeben..." onkeyup="filterVorschlaege()">
           <div id="vorschlaege"></div>
