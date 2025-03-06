@@ -188,7 +188,7 @@ let aktuelleEtage = "draussen";
     r008: {
       bild: 'assets/bilder/keller/008.jpg',
       rotation: "0 -33 0",
-      beschreibung: "008 5. Klasseraum",
+      beschreibung: "008 Klassenraum 5. Klasse",
       etage: '0',
       pfeile: [
         { ziel: 'K1', position: '6.7 -1 6.5', rotation: '0 -90 0'}, //3.5 -1 2.5
@@ -213,7 +213,7 @@ let aktuelleEtage = "draussen";
     r010: {
       bild: 'assets/bilder/keller/010.jpg',
       rotation: "0 155 0",
-      beschreibung: "010",
+      beschreibung: "010 Klassenraum 6. Klasse",
       etage: '0',
       pfeile: [
         { ziel: 'K1', position: '-2.5 -1 6.7', rotation: '0 210 0'},
@@ -436,7 +436,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/1etage/109.jpg',
       rotation: "0 22 0",
       etage: '1',
-      beschreibung: "109 Sozialarbeiterraum",
+      beschreibung: "109 Sozialarbeiter",
       pfeile: [
         { ziel: 'E11', position: '-1 -1 3', rotation: '0 180 0'} 
       ],
@@ -463,7 +463,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppeE1', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
         { ziel: 'r104', position: '1 -1 2.7', rotation: '0 145 0'},
         { ziel: 'r103', position: '1.6 -1 -5.3', rotation: '0 22 0'},
-        { ziel: 'E14', position: '0.2 -1 -3.8', rotation: '0 0 0'}//rotation verändert
+        { ziel: 'E14', position: '0.2 -1 -3.8', rotation: '0 182 0'}
       ],
       grundrissPosKlein: "-2.1 1.19",
     },
@@ -634,7 +634,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/207.jpg',
       rotation: "0 65 0",
       etage: '2',
-      beschreibung: "207 Biologie/Chemie",
+      beschreibung: "207 Biologie",
       pfeile: [
         { ziel: 'E21_2', position: '4 -1 -5.5', rotation: '0 17 0'} 
       ],
@@ -783,7 +783,7 @@ let aktuelleEtage = "draussen";
       grundrissPosKlein: "-2.1 1.19",
     },
 
-    lehrerzimmer: {//grundrissposklein
+    lehrerzimmer: {
       bild: 'assets/bilder/2etage/lehrerzimmer_normal.jpeg',
       rotation: "0 0 0",
       etage: '2',
@@ -878,7 +878,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/2etage/221.jpg',
       rotation: "0 -162 0",
       etage: '2',
-      beschreibung: "221 Vorbereitungsraum",
+      beschreibung: "221 Medien/Vorbereitung",//???
       pfeile: [
         { ziel: 'E25', position: '-0.2 -1 3.7', rotation: '0 180 0'} 
       ],
@@ -1161,7 +1161,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/3etage/315h.jpg',
       rotation: "0 -21 0",
       etage: '3',
-      beschreibung: "315 Computerraum/WAT",
+      beschreibung: "315 Computerraum",
       pfeile: [
         { ziel: 'r315_1', position: '1.5 -1 3.8', rotation: '0 180 0'}
       ],
@@ -1172,7 +1172,7 @@ let aktuelleEtage = "draussen";
       bild: 'assets/bilder/3etage/315.jpg',
       rotation: "0 180 0",
       etage: '3',
-      beschreibung: "315 Computerraum/WAT",
+      beschreibung: "315 Computerraum",
       pfeile: [
       { ziel: 'r315_2', position: '0 -1 -3.8', rotation: '0 0 0'},
       { ziel: 'E36', position: '-1 -1 3.3', rotation: '0 105 0'},
@@ -1193,7 +1193,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'n12', position: '-3 -1 -6.5', rotation: '0 -24 0'},
         {ziel: 'haupteingang', position: '-3 -1 8', rotation: '0 -160 0'}
       ],
-      grundrissPosKlein: "-1.935 1.03",
+      grundrissPosKlein: "1 1"
     },
     n11_2: {
       bild: 'assets/bilder/neubau/fluru1.jpg',
@@ -1205,8 +1205,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r14', position: '-5 -1 2.56', rotation: '0 92 0'},
         { ziel: 'n12', position: '3 -1 6.5', rotation: '0 156 0'},
         {ziel: 'haupteingang', position: '3 -1 -8', rotation: '0 20 0'}
-      ],
-      grundrissPosKlein: "-1.935 1.03",
+      ]
     },
 
     n12: {
@@ -1216,8 +1215,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '1.23 -1 -5.5', rotation: '0 0 0'},
         { ziel: 'n11_2', position: '-1.2 -1 4', rotation: '0 183 0'}
-      ],
-      grundrissPosKlein: "-2.08 1.19",
+      ]
     },
     n12_2: {
       bild: 'assets/bilder/neubau/fluru2.jpg',
@@ -1226,8 +1224,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '-1.23 -1 5.5', rotation: '0 180 0'},
         { ziel: 'n11_2', position: '1.2 -1 -4', rotation: '0 3 0'}
-      ],
-      grundrissPosKlein: "-2.08 1.19",
+      ]
     },
 
     n21: {
@@ -1242,8 +1239,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r23', position: '-1.6 -1 -6.4', rotation: '0 -24 0'},
         { ziel: 'r24', position: '5 -1 -7', rotation: '0 0 0'},
         { ziel: 'r25', position: '6.9 -1 0.5', rotation: '0 -64 0'}
-      ], 
-      grundrissPosKlein: "-2.08 1.2345",
+      ]
     },
     n21_2: {
       bild: 'assets/bilder/neubau/fluro1.jpg',
@@ -1257,8 +1253,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r23', position: '1.6 -1 6.4', rotation: '0 156 0'},
         { ziel: 'r24', position: '-5 -1 7', rotation: '0 180 0'},
         { ziel: 'r25', position: '-6.9 -1 -0.5', rotation: '0 116 0'}
-      ],
-      grundrissPosKlein: "-2.08 1.2345",
+      ]
     },
     
     n22: {
@@ -1270,8 +1265,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r25', position: '2.2 -1 5.5', rotation: '0 155 0'},
         { ziel: 'r24', position: '-3 -1 6.5', rotation: '0 -155 0'},
         { ziel: 'haupteingang', position: '1.5 -1 -6.5', rotation: '0 0 0'} 
-      ],
-      grundrissPosKlein: "-1.99 1.11",
+      ]
     },
     n22_2: {
       bild: 'assets/bilder/neubau/fluro2.jpg',
@@ -1282,8 +1276,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r25', position: '-2.2 -1 -5.5', rotation: '0 -25 0'},
         { ziel: 'r24', position: '3 -1 -6.5', rotation: '0 25 0'},
         { ziel: 'haupteingang', position: '-1.5 -1 6.5', rotation: '0 180 0'},  
-      ],
-      grundrissPosKlein: "-1.99 1.11",
+      ]
     },
 
     r12: {
@@ -1293,30 +1286,27 @@ let aktuelleEtage = "draussen";
       beschreibung: "1.2 Musik",
       pfeile: [
         { ziel: 'n11', position: '0.5 -1 7', rotation: '1 -153 0'}
-      ],
-      grundrissPosKlein: "-2.13 1.29",
+      ]
     },
 
     r13: {
       bild: 'assets/bilder/neubau/1.3.jpg',
       rotation: "0 -5 0",
       etage: 'neubau1',
-      beschreibung: "1.3 Deutsch/Geschichte",
+      beschreibung: "1.3 Sprachen",
       pfeile: [
         { ziel: 'n11', position: '5.5 -1 -6', rotation: '0 -40 0'}
-      ],
-      grundrissPosKlein: "-1.79 1.29",
+      ]
     },
 
     r14: {
       bild: 'assets/bilder/neubau/1.4.jpg',
       rotation: "0 135 0",
       etage: 'neubau1',
-      beschreibung: "1.4 Musik",
+      beschreibung: "1.2 Musik",
       pfeile: [
         { ziel: 'n11', position: '-2 -1 -4', rotation: '0 -25 0'}
-      ],
-      grundrissPosKlein: "-1.717 1.15",
+      ]
     },
 
     r21_1: {
@@ -1328,8 +1318,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'r21_2', position: '-0.45 -2 5', rotation: '0 176 0'},
         { ziel: 'n21_2', position: '8 -1 -3', rotation: '0 -90 0'},
         { ziel: 'r22_2', position: '5 -1 -4.5', rotation: '0 0 0'}
-      ],
-      grundrissPosKlein: "-2.178 1.31",
+      ]
     },
     r21_2: {
       bild: 'assets/bilder/neubau/2.1.2.jpg',
@@ -1338,45 +1327,41 @@ let aktuelleEtage = "draussen";
       beschreibung: "2.1 Kunst",
       pfeile: [
         { ziel: 'r21_1', position: '0.1 -2 4.2', rotation: '0 176 0'}
-      ],
-      grundrissPosKlein: "-2.178 1.31",
+      ]
     },
 
     r22: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 158 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitungsraum",
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '-3 -1 1.1', rotation: '0 93 0'},
         { ziel: 'r23', position: '3.7 -1 0.9', rotation: '0 -89 0'},
         { ziel: 'n21_2', position: '-0.7 -1 3.4', rotation: '0 184 0'}
-      ],
-      grundrissPosKlein: "-2 1.31",
+      ]
     },
     r22_2: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 248 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitungsraum",
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '1.2 -1 2.8', rotation: '0 183 0'},
         { ziel: 'r23', position: '1 -1 -3.5', rotation: '0 1 0'},
         { ziel: 'n21_2', position: '3.2 -1 0.7', rotation: '0 275 0'}
-      ],
-      grundrissPosKlein: "-2 1.31",
+      ]
     },
     r22_3: {
       bild: 'assets/bilder/neubau/2.2.jpg',
       rotation: "0 64 0",
       etage: 'neubau2',
-      beschreibung: "2.2 Vorbereitungsraum",      
+      beschreibung: "2.2 Vorbereitung",
       pfeile: [
         { ziel: 'r21_1', position: '-0.9 -1 -2.8', rotation: '0 -1 0'},
         { ziel: 'r23', position: '-1 -1 3.5', rotation: '0 177 0'},
         { ziel: 'n21_2', position: '-3.2 -1 -0.7', rotation: '0 91 0'}
-      ],
-      grundrissPosKlein: "-2 1.31",
+      ]
     },
 
     r23: {
@@ -1387,8 +1372,7 @@ let aktuelleEtage = "draussen";
       pfeile: [
         { ziel: 'n21', position: '-6.9 -1 -4.3', rotation: '0 93 0'},
         { ziel: 'r22_3', position: '-5.2 -1 -5', rotation: '0 0 0'}
-      ],
-      grundrissPosKlein: "-1.83 1.31",
+      ]
     },
 
     r24: {
@@ -1398,22 +1382,72 @@ let aktuelleEtage = "draussen";
       beschreibung: "2.4 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '-6 -1 0.2', rotation: '0 89 0'}
-      ],
-      grundrissPosKlein: "-1.79 1.19"
+      ]
     },
 
     r25: {
       bild: 'assets/bilder/neubau/2.5.jpg',
       rotation: "0 -128 0",
       etage: 'neubau2',
-      beschreibung: "2.5 Geschichte/Politik",
+      beschreibung: "2.5 Geschichte",
       pfeile: [
         { ziel: 'n22', position: '2.5 -1 6.5', rotation: '0 -150 0'}
-      ],
-      grundrissPosKlein: "-2.2 1.15",
+      ]
     }
   
   };
+
+  let aktuellesBild = 0;
+  const bilder = [
+    "assets/bilder/2etage/lehrerzimmer_normal.jpeg",
+    "assets/bilder/2etage/lehrerzimmer_grusel.png"
+  ];
+
+  let bildWechselTimer; 
+
+function betreteLehrerzimmer() {
+  aktuellesBild = Math.random() < 0.5 ? 0 : 1;
+
+  const sky = document.querySelector("a-sky");
+  sky.setAttribute("src", bilder[aktuellesBild]);
+
+  //Sound
+  const audio = new Audio("assets/sounds/jumpscare.mp3");
+  audio.play();
+
+  starteBildwechsel();
+}
+
+//zufälligen Bildwechsel
+function starteBildwechsel() { 
+  
+  // weißer Bildschirm 
+  const blitz = document.createElement("div");
+  blitz.style.position = "fixed";
+  blitz.style.top = "0";
+  blitz.style.left = "0";
+  blitz.style.width = "100vw";
+  blitz.style.height = "100vh";
+  blitz.style.background = "white";
+  blitz.style.zIndex = "9999";
+  document.body.appendChild(blitz);
+  
+  setTimeout(() => {
+      document.body.removeChild(blitz);
+  }, 150); 
+
+  if (bildWechselTimer) clearTimeout(bildWechselTimer);
+
+  let zufallsZeit = Math.random() * (1000 - 300) + 300; //zwischen 1s & 300ms
+
+  bildWechselTimer = setTimeout(() => {
+      aktuellesBild = 1 - aktuellesBild;
+      document.querySelector("a-sky").setAttribute("src", bilder[aktuellesBild]);
+      starteBildwechsel();
+  }, zufallsZeit);
+}
+
+
 
 //Etagen zu den entsprechenden Grundrissbildern
     const Grundriss = {
@@ -1446,7 +1480,7 @@ function schliesseGrundriss() {
   }
 }
 
-//Wechselt Grundriss zur gewählten Etage
+// Wechselt Grundriss zur gewählten Etage
 function wechsleEtage(etage) {
   console.log("wechsleEtage aufgerufen mit Etage:", etage);
   const grundrissBild = document.getElementById("grundriss-bild");
@@ -1608,7 +1642,7 @@ function ladeKlickbareZonen(etage) {
     }
 }
 
-//Bewegen des roten Punktes
+  //Bewegen des Punktes
 function bewegePunkt(punktId, position) {
   let punkt = document.querySelector(punktId);
   if (punkt && position) {
@@ -1647,6 +1681,12 @@ function updatePunktPositions(raum) {
      setTimeout(() => {
       camera.setAttribute('look-controls', 'enabled: true');
     }, 50);
+
+    // //falls vorher Timer lief, stoppen
+    // if (bildWechselTimer) {
+    //     clearInterval(bildWechselTimer);
+    //     bildWechselTimer = null;
+    // }
 
     sky.setAttribute('src', raeume[raum].bild);
     console.log("Bild geladen:", raeume[raum].bild);

@@ -1,0 +1,113 @@
+
+body {background-image: url('bilder/hintergrund1.jpg'); background-size: cover; background-position: center;
+    font-family: Arial, sans-serif; text-align: center; }
+    #passwort-container { position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
+    #geschuetzter-inhalt { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%;}
+
+    #raum-text-container {
+        position: absolute;
+        top: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(214,111,92, 0.7);
+        color: white;
+        padding: 0px 20px;
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        display: none; 
+        z-index: 10;
+    }
+
+
+    .DSB-container {
+        position: fixed;
+        top: 20px;
+        right: 90px;
+        width: 60px;
+        height: 60px;
+        z-index: 10;
+    }
+
+    .DSB-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    
+    #hilfe-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #hilfe-text {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 700px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        z-index: 9;
+       }
+
+.links {
+    text-align: left;
+    margin-left: 10px; 
+}
+
+#spiel-icon {
+      display: block;
+    position: fixed;
+    top: 20px;
+    right: 160px;
+    width: 60px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#spiel-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    background: rgba(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 11;
+    
+}
+
+#vorschlaege {
+    background: #eee;
+    position: absolute;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+#vorschlaege div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#vorschlaege div:hover {
+    background: #ddd;
+} 

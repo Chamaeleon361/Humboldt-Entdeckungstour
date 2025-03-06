@@ -310,11 +310,13 @@ r25: {
 
 }
 
-// Alle Raumschlüssel, die mit "r" beginnen
 let spielModusAktiv = false;
 let aktuellerRaum = "";
+let wrongCount = 0;
 let normalBild = null;
 let normalRotation = null;
+let noramlRaum = "";
+
 const raeumeKeys = Object.keys(raeumeDatenbank).filter(r => r.startsWith("r"));
 
 // Anzeige des Spielcontainers beim Laden der Seite ausblenden
@@ -323,11 +325,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function toggleSpielmodus() {
+  
   spielModusAktiv = !spielModusAktiv;
   document.getElementById("spiel-container").style.display = spielModusAktiv ? "block" : "none";
+  
+
 if (!spielModusAktiv) {
     verlasseSpielmodus();
   }
+  else {
+    document.getElementById("eingabe").value = "";
+  document.getElementById("auswertung").innerText = "";
+  
+  document.getElementById("absendenBtn").disabled = false;
+ wrongCount = 0; 
+
+}
 }
 
 function starteSpiel() {
@@ -338,6 +351,8 @@ function starteSpiel() {
   aktuellerRaum = raeumeKeys[Math.floor(Math.random() * raeumeKeys.length)];
   document.getElementById("eingabe").value = "";
   document.getElementById("auswertung").innerText = "";
+  document.getElementById("vorschlaege").innerHTML = "";  
+  document.getElementById("absendenBtn").disabled = false;
   
   entfernePfeile();
   ladeSpielRaum(aktuellerRaum);
@@ -363,15 +378,37 @@ function entfernePfeile() {
   
 function pruefeAntwort() {
   let eingabe = document.getElementById("eingabe").value.toLowerCase().trim();
+  
+  document.getElementById("vorschlaege").innerHTML = "";
   // Wenn der eingegebene Wert nicht mit 'r' beginnt, wird er ergänzt:
   if (!eingabe.startsWith("r")) {
       eingabe = "r" + eingabe;
   }
-  const ergebnis = eingabe === aktuellerRaum ? "Richtig! 🎉" : `Falsch! Es war: ${aktuellerRaum}`;
-  document.getElementById("auswertung").innerText = ergebnis;
-  // Eingabefeld leeren
+  if (eingabe === aktuellerRaum) {
+    document.getElementById("auswertung").innerText = "Richtig! 🎉";
+    // Deaktiviere den Absenden-Button, damit keine weiteren Versuche möglich sind
+    
+   document.getElementById("absendenBtn").disabled = true;
+  } else {
+    wrongCount++;
+    if (wrongCount < 3) {
+      document.getElementById("auswertung").innerText = "Falsch!";
+    } else {
+      document.getElementById("auswertung").innerText = `Falsch! Die richtige Antwort ist: ${aktuellerRaum}`;
+    }
+  }
   document.getElementById("eingabe").value = "";
+  // Intelligente Suche ausblenden
+  document.getElementById("vorschlaege").innerHTML = "";
 }
+
+// Event-Listener für Enter-Taste
+document.getElementById("eingabe").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        pruefeAntwort();
+    }
+});
+
 
 function filterVorschlaege() {
   let input = document.getElementById("eingabe").value.toLowerCase().trim();
@@ -389,13 +426,16 @@ function setzeEingabe(raum) {
 
 function verlasseSpielmodus() {
     // Stelle das normale Bild wieder her
-    if (normalBild) {
-      document.getElementById("sky").setAttribute("src", normalBild);      
-      document.getElementById("sky").setAttribute("rotation", normalRotation);
-    }
+    
+  
     document.querySelectorAll(".pfeil").forEach(p => {p.setAttribute("visible",true)});
     
     document.querySelector("#punktKlein").setAttribute("visible",true);
     document.querySelector("#Grundriss").setAttribute("visible",true);
+
+    document.getElementById("vorschlaege").innerHTML = "";
+    document.getElementById("auswertung").innerHTML = "";
+    document.getElementById("eingabe").value = "";
+ladeRaum('haupteingang')
     
 };

@@ -4,16 +4,11 @@
     <meta charset="utf-8">
     <title>Humboldt Entdeckungstour</title>
     <meta name="description" content="360&deg; Image - A-Frame">
+
+    <link rel="stylesheet" href="assets/styles.css">
     <script src="assets/js/aframe-master.js"></script>
     <script src="assets/js/raumwechsel.js" defer></script>
-    <script src="assets/js/geoguesser.js" defer></script>
-    
-    <style>
-      body {background-image: url('assets/bilder/hintergrund1.jpg'); background-size: cover; background-position: center;
-      font-family: Arial, sans-serif; text-align: center; }
-      #passwort-container { position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
-      #geschuetzter-inhalt { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%;}
-  </style>
+    <script src="assets/js/roomguesser.js" defer></script>    
 
   </head>
 
@@ -23,7 +18,7 @@
       <h2>Bitte DSB-Passwort eingeben:</h2>
       <input type="password" id="passwort-eingabe" placeholder="Passwort">
       <button onclick="pruefePasswort()">Login</button>
-      <p id="fehlermeldung" style="color: rgb(214, 34, 34); display: none;">Falsches Passwort!</p>
+      <p id="fehlermeldung" style="color: rgb(214, 34, 34); display: none; font-style: oblique;">Falsches Passwort!</p>
     </div>
  
   <div id="geschuetzter-inhalt">
@@ -53,136 +48,28 @@
         <p class="links">> Klicke auf den Grundriss, um ihn zu vergrößern.</p>
         <p class="links">> In dieser Ansicht kannst du auf Räume und Treppen (schwarze Schrift) klicken, um zu ihnen zu teleportieren.</p>
         <p class="links">> Der rote Punkt zeigt immer deine aktuelle Position an.</p>
+        <p class="links">> Klicke das Spiel-Icon, um RoomGuesser Schul-Edition zu spielen.</p>
+        <p class="links">> Klicke das DSB-Icon, um zur Website des Vertretungsplans zu gelangen.</p>
         <p class="links">> Klicke das Fragezeichen erneut, um die Anleitung zu schließen.</p>
       
       </div>
 
-      <!-- Spiel-Icon -->
       <img src="assets/bilder/game-icon.PNG" id="spiel-icon" onclick="toggleSpielmodus()" alt="GeoGuessr">
 
-      <!-- GeoGuessr-Container -->
+       <!-- GeoGuessr-Container   -->
       <div id="spiel-container">
-          <h2>GeoGuessr Schul-Edition</h2>
-          <p>Finde heraus, in welchem Raum du dich befindest!</p>
+          <h2>RoomGuesser Schul-Edition</h2>
+          <p>Finde heraus, in welchem Raum du dich befindest!</p>          
+          <p>Drücke Start, um eine Runde zu beginnen</p>
+          <p>Erate den Raum und gib seine Nummer in das Eingabefeld ein</p>
+          <p>Hinweis: Altbau 3 Ziffern, Neubau 2 Ziffern</p> 
           <button onclick="starteSpiel()">Start</button>
           <input id="eingabe" type="text" placeholder="Raum eingeben..." onkeyup="filterVorschlaege()">
           <div id="vorschlaege"></div>
-          <button onclick="pruefeAntwort()">Absenden</button>
+          <button id="absendenBtn" onclick="pruefeAntwort()">Absenden</button>
           <p id="auswertung"></p>
           <button onclick="toggleSpielmodus()">Schließen</button>
       </div>
-
-<style>
-    #raum-text-container {
-        position: absolute;
-        top: 20px; 
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(214,111,92, 0.7);
-        color: white;
-        padding: 0px 20px;
-        border-radius: 8px;
-        font-family: Arial, sans-serif;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-        display: none; 
-        z-index: 10;
-    }
-
-
-    .DSB-container {
-        position: fixed;
-        top: 20px;
-        right: 90px;
-        width: 60px;
-        height: 60px;
-        z-index: 10;
-    }
-
-    .DSB-container img {
-        display: block;
-        width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-    
-    #hilfe-icon {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 60px;
-        height: auto;
-        cursor: pointer;
-        z-index: 10;
-    }
-
-    #hilfe-text {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 10px;
-        border-radius: 10px;
-        width: 500px;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        text-align: center;
-        z-index: 9;
-       }
-
-.links {
-    text-align: left;
-    margin-left: 10px; 
-}
-
-    #spiel-icon {
-      display: block;
-    position: fixed;
-    top: 20px;
-    right: 160px;
-    width: 60px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-#spiel-container {
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 50px;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 100;
-    
-}
-
-#vorschlaege {
-    background: #eee;
-    position: absolute;
-    width: 200px;
-    margin-top: 5px;
-    border-radius: 5px;
-}
-
-#vorschlaege div {
-    padding: 5px;
-    cursor: pointer;
-}
-
-#vorschlaege div:hover {
-    background: #ddd;
-}
-
-    
-</style>
 
 
         <!-- Kleiner Grundriss am Bildschirmrand -->
@@ -192,7 +79,7 @@
         class="clickable" 
         onclick="oeffneGrundriss(), wechsleEtage('1')" >
         </a-image>
-        <a-circle id="punktKlein" position="0 0.3 -1.89" radius="0.018" color="red" opacity="0.8"></a-circle>
+        <a-circle id="punktKlein" position="0 0.3 -1.89" radius="0.018" color="red" opacity="0.8" visible="true"></a-circle>
 
          <!-- Vergrößerter Grundriss-Container -->
             <a-entity id="grundriss-container" visible="false" position="0 1.5 -2">
