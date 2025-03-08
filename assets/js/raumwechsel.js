@@ -780,7 +780,7 @@ let aktuelleEtage = "draussen";
     },
 
     lehrerzimmer: {
-      bild: 'assets/bilder/2etage/lehrerzimmer_normal.jpeg',
+      bild: 'assets/bilder/2etage/lehrerzimmer_normal.jpg',
       rotation: "0 0 0",
       etage: '2',
       pfeile:[
@@ -1414,7 +1414,7 @@ let aktuelleEtage = "draussen";
   //spooky Lehrerzimmer
   let aktuellesBild = 0;
   const bilder = [
-    "assets/bilder/2etage/lehrerzimmer_normal.jpeg",
+    "assets/bilder/2etage/lehrerzimmer_normal.jpg",
     "assets/bilder/2etage/lehrerzimmer_grusel.png"
   ];
 
