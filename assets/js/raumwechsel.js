@@ -1,21 +1,17 @@
-document.getElementById("passwort-eingabe").addEventListener("keypress", function(event) {
+document.getElementById("start-container").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
-      pruefePasswort();
+      start();
   }
 });
 
-function pruefePasswort() {
-  const korrektesPasswort = "a"; //DSB PASSWORT dsb2013 (hier Änderungen)
-  let eingabe = document.getElementById("passwort-eingabe").value;
-  let fehlermeldung = document.getElementById("fehlermeldung");
 
-  if (eingabe === korrektesPasswort) {
-      document.getElementById("passwort-container").style.display = "none";
+
+document.getElementById("startButton").addEventListener("click", function() {
+  
+  document.getElementById("start-container").style.display = "none";
+  //document.getElementById("geschuetzterBereich").style.display = "block";
       document.getElementById('geschuetzter-inhalt').style.visibility = 'visible';
-  } else {
-      fehlermeldung.style.display = "block";
-  }
-}
+});
 
 
  AFRAME.registerComponent('cursor-listener', {
@@ -463,7 +459,7 @@ let aktuelleEtage = "draussen";
         { ziel: 'treppeE1', position: '-0.2 -1 3.8', rotation: '0 177.4 0'},
         { ziel: 'r104', position: '1 -1 2.7', rotation: '0 145 0'},
         { ziel: 'r103', position: '1.6 -1 -5.3', rotation: '0 22 0'},
-        { ziel: 'E14', position: '0.2 -1 -3.8', rotation: '0 182 0'}
+        { ziel: 'E14', position: '0.2 -1 -3.8', rotation: '0 0 0'}
       ],
       grundrissPosKlein: "-2.1 1.19",
     },

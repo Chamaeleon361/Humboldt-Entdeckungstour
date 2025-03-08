@@ -1,9 +1,36 @@
 
 body {background-image: url('bilder/hintergrund1.jpg'); background-size: cover; background-position: center;
     font-family: Arial, sans-serif; text-align: center; }
-    #passwort-container { position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
-    #geschuetzter-inhalt { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%;}
 
+    #start-container { position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;}
+    
+    #start-container:hover {
+        transform: translate(-50%, -50%) scale(1.05); 
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    #startButton {
+        margin-top: 30px;
+        padding: 20px 40px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        background: linear-gradient(135deg, #d66f5c, #cc6c5b);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #startButton:hover {
+        background: linear-gradient(135deg, #dd6650, #d66f5c);
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #geschuetzter-inhalt { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%;}
+    
     #raum-text-container {
         position: absolute;
         top: 20px; 
